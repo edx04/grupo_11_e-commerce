@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/css/editProduct.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type='text/css'>
+    <title>Edición de productos</title>
+</head>
+<body>
+    <header>       
+        <nav class="main-navbar">
+            <div class="main-header">
+                <div class="left-nav">
+                    <div class="boton-nav">
+                        <a href="#" class="hamburger-button">
+                            <i class="fas fa-bars" style="color:lightgray"></i>
+                        </a>
+                    </div>
+                    <div class="logo-nav"> 
+                        <img src="static/images/logo.png" class="logo"> 
+                    </div>
+                </div>
+                <div class="center-nav">
+                    <ul class="menu-center-nav">
+                        <li><a href="#">Guitarras</a></li>
+                        <li><a href="#">Bajos</a></li>
+                        <li><a href="#">Baterías</a></li>
+                        <li><a href="#">Otros instrumentos</a></li>
+                        <li><a href="#">Partes</a></li>
+                        <li><a href="#">Accesorios</a></li>
+                    </ul>
+                </div>    
+                <div class="right-nav">
+                    <div>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    <ul>
+                        <li><a href="/register">Registro</a></li>
+                        <li><a href="/login">Ingresa</a></li>
+                        <li><a href="/productCart"> <i class="fas fa-shopping-cart"></i></a></li>
+                    </ul>
+                </div>     
+            </div>
+        </nav>
+    </header>
+    <main class="main-edit">
+        <div class="titulo-edit">
+            <h3>Editar producto</h3>
+        </div>
+
+        <div class="form-edit">
+            <form class="form-editProduct">
+                <div class="div-formEdit">
+                    <div>
+                        <label for="producto" class="italics">Nombre del producto</label>
+                    </div>                    
+                    <input type="text" placeholder="Nombre" name="producto" required>
+                </div>
+    
+                <div class="div-formEdit">
+                    <label for="descripcion" class="italics">Descripción</label>
+                    <br>
+                    <textarea name="descripcion" id="descripcion" cols="30" rows="3"></textarea>
+                </div>
+    
+                <div class="div-formEdit">
+                    <label for="perfil" class="italics">Imagen</label>
+                    <br>
+                    <input type="file" id="foto" name="perfil" accept="image/*">
+                </div>    
+                
+                <div class="div-formEdit">
+                    <label for="categoria" class="italics">Categoría</label>
+                    <br>
+                    <select name="categoria" id="categoria">
+                        <option value="1">Guitaras</option>
+                        <option value="2">Bajos</option>
+                        <option value="3">Baterías</option>
+                        <option value="4">Otros instrumentos</option>
+                        <option value="5">Partes</option>
+                        <option value="6">Accesorios</option>
+                    </select>
+                </div>
+                
+                <div class="colores">
+                    <p class="italics">Colores</p>
+                    <div class="check-colores">
+                        <div>
+                            <label for="rojo">Rojo</label>
+                            <input type="checkbox" name="rojo" value="rojo" id="rojo">
+                        </div>
+                        <div>
+                            <label for="azul">Azul</label>
+                            <input type="checkbox" name="azul" value="azul" id="azul">
+                        </div>
+                        <div>
+                            <label for="verde">Verde</label>
+                            <input type="checkbox" name="verde" value="verde" id="verde">
+                        </div>
+                        <div>
+                            <label for="blanco">Blanco</label>
+                            <input type="checkbox" name="blanco" value="blanco" id="blanco">
+                        </div>
+                        <div>
+                            <label for="negro">Negro</label>
+                            <input type="checkbox" name="negro" value="negro" id="negro">
+                        </div>
+                        <div>
+                            <label for="otro">Otro</label>
+                            <input type="checkbox" name="otro" value="otro" id="otro">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="div-formEdit">
+                    <label for="precio" class="italics">Precio</label>
+                    <br>
+                    <input type="number" placeholder="0.00" name="precio" min="0" step="0.01" required>
+                </div>
+
+                <div class="botones-edit">
+                    <button type="submit" class="boton">Guardar</button>
+                    <button type="reset" class="boton">Borrar</button>
+                </div>
+
+            </form>
+        </div>  
+    </main>
+    <footer>
+        <div class="seccion-footer">
+            <h4>Acerca de Nosotros</h4>
+        </div>
+        <div class="seccion-footer">
+            <h4>Contacto</h4>
+        </div>
+        <div class="seccion-footer">
+            <h4>Ubicación</h4>
+        </div>
+    </footer>
+</body>
+</html>
