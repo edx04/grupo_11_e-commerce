@@ -1,6 +1,6 @@
 # grupo_11_e-commerce
 
-## Integrantes del equipo
+## Developers
 
 * [Eva Real](https://github.com/EvaReal)
 
@@ -10,19 +10,49 @@
 
 
 
+## Descripcion del proyecto
 
-Temática del sitio: Instrumentos musicales
+Temática del sitio: e-commerce de Instrumentos musicales
 
 Público objetivo: Sitio dirigido tanto a músicos principiantes como a profesionales que estén buscando adquirir un instrumento musical, accesorios o equipo de sonido. 
 
-Referentes:
+Referencias:
 
--https://www.guitarcenter.com/
+- https://www.guitarcenter.com/
 
--https://mx.yamaha.com/index.html
+- https://mx.yamaha.com/index.html
 
--https://shop.fender.com/en/intl/start
+- https://shop.fender.com/en/intl/start
 
--https://www.gibson.com/
+- https://www.gibson.com/
 
--http://www.topmusic.com.mx/mx/
+- http://www.topmusic.com.mx/mx/
+
+
+## Requerimientos
+
+- [Node.js](https://nodejs.org/) 
+
+## Instalación
+
+  1. Clonar el repo
+   ```sh
+   git clone https://github.com/edx04/grupo_11_e-commerce.git
+   ```
+  2 Instalar todas las dependencias
+  ```sh
+  npm install
+  ```
+   3 Ejecutar el servidor:
+  ```sh
+  npm start
+
+  ```
+
+
+### Dev dependencies
+
+[**nodemon**](https://www.npmjs.com/package/nodemon)
+```sh
+npm install --save-dev nodemon
+```
