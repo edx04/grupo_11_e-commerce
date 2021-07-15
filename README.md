@@ -1,6 +1,6 @@
 # grupo_11_e-commerce
 
-##Integrantes del equipo
+## Integrantes del equipo
 
 * [Eva Real](https://github.com/EvaReal)
 
