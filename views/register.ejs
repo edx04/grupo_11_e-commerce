@@ -46,28 +46,28 @@
             </div>
         </nav>
     </header>
-
     <main class="login-register">
         <div class="full">
             <div class="izquierda">
-                <form action="">
-                    <h2>Inicia sesion</h2>
-                    <input required type="text" placeholder="Nombre de usuario">
-                    <input required type="password" placeholder="Contraseña">
-                    <label><input type="checkbox" id="recordarme" value="recordarme"> Recordarme </label><br>
-                    <button type="submit">Inciar</button>
+                <h2>Crea tu cuenta</h2>
+                <form action="/register" method="POST">
+                    <input required type="text" placeholder="Nombre" name="name">
+                    <input required type="email" placeholder="Email" name="email">
+            
+                    <input required type="password" name="password" id="password" placeholder="Contraseña">
+                    <input required type="password" name="passwordConfirm" id="passwordc" placeholder="Confirmar contraseña" >
+                    
+                    <button type="submit">Registrar</button>
+            
                 </form>
+                <a href="/login">¿Ya tienes cuenta?</a>
             </div>
             <div class="derecha">
-                <h2>¿Aun no tienes cuenta?</h2>
-                <button onclick="location.href='/register'">Registrarse</button>
-
+                <h2>¿Ya tienes cuenta?</h2>
+                <button onclick="location.href='/login'">Iniciar</button>
             </div>
-
         </div>
-
     </main>
-
     <footer>
         <div class="seccion-footer">
             <h4>Acerca de Nosotros</h4>
