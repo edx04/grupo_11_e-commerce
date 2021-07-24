@@ -28,6 +28,9 @@ Referencias:
 
 - http://www.topmusic.com.mx/mx/
 
+Wireframe : https://www.figma.com/file/95y7kIhneRKRlJ0ttwH3OV/Proyecto_equipo_11
+
+Tablero del equipo : https://trello.com/b/SuYbCGEe/equipo-11
 
 ## Requerimientos
 
