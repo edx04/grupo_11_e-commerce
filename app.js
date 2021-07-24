@@ -31,7 +31,6 @@ app.get('/productDetail', (req,res)=>{
     res.sendFile(__dirname+'/views/productDetail.html');
 });
 
-
 app.listen(3000, ()=>{
     console.log('Servidor funcionando');
 });

@@ -16,16 +16,21 @@
     font-size: 22px;
     color: black;
     max-width: 600px;
-    max-height: 600px;
 }
 
 .login-register .derecha{
     display: none;
 }
 
+.error{
+    text-align: center;
+    color: #ff0000;
+}
+
 .login-register{
-    padding-top: 40px;
-    height: 75.8vh;
+    padding: 30px 0px;
+    height: 76vh;
+    margin: auto;
 }
 
 .login-register h2{
@@ -36,7 +41,7 @@
 .login-register form input{
     display: block;
     text-align: center;
-    margin: 30px auto;
+    margin: 15px auto;
     border-radius: 10px;
     width: 90%;
     height: 40px;
