@@ -20,7 +20,7 @@ app.use('/login', loginRouter);
 app.use('/productCart', cartRouter);
 app.use('/productDetail', productRouter);
 app.use('/register', registerRouter);
-app.use('/editProduct',editRouter);
+app.use('/editProduct', editRouter);
 app.use('/products', productsRouter)
 
 app.listen(3000, () => {

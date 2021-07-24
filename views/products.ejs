@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head') %>
+
+
+    <body>
+        <%- include('./partials/header') %>
+
+            <main>
+                <section>
+                    <div class="slideshow-container">
+                        <img src="/static/images/slideshow-image-1.jpg" class="slideshow-images">
+                    </div>
+                </section>
+                <section>
+                    <h3>Todos los productos </h3>
+                    <div class="contenedor-articulos">
+                        <article><img src="/static/images/mas-vendido-1.jpg" alt="Guitarra Fender" class="img-articulo">
+                            <div class="articulo">
+                                <h5 class="descripcion">Fender Stratocaster Negra</h5>
+                            </div>
+                        </article>
+
+                        <article><img src="/static/images/mas-vendido-2.jpg" alt="Bajo Yamaha Rojo 4 Cuerdas" class="img-articulo">
+                            <div class="articulo">
+                                <h5 class="descripcion">Bajo Yamaha Rojo 4 cuerdas</h5>
+                            </div>
+                        </article>
+
+                        <article><img src="/static/images/mas-vendido-3.jpg" alt="Amplificador Line 6" class="img-articulo">
+                            <div class="articulo">
+                                <h5 class="descripcion">Amplificador Line 6</h5>
+                            </div>
+                        </article>
+
+                        <article><img src="static/images/mas-vendido-4.jpg" alt="Cuerdas para guitarra Classic" class="img-articulo">
+                            <div class="articulo">
+                                <h5 class="descripcion">Cuerdas para guitarra Classic</h5>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+            </main>
+            <%- include('./partials/footer') %>
+
+    </body>
+
+</html>
