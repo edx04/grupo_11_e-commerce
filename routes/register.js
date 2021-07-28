@@ -4,7 +4,9 @@ const router = express.Router();
 const registerController = require('../controllers/registerController');
 const validacionesRegister = require('../middlewares/validaciones/validacionesRegister');
 
-router.get('/',registerController.index);
+const usuariosMiddleware = require("../middlewares/usuariosMiddleware");
+
+router.get('/', usuariosMiddleware ,registerController.index);
 
 router.post('/', validacionesRegister, registerController.register);
 

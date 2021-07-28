@@ -1,6 +1,7 @@
-const express=require('express');
-const path=require('path');
-const app=express();
+const express= require('express');
+const path= require('path');
+const app= express();
+const session = require('express-session');
 
 const loginRouter = require('./routes/login'); // Rutas para login
 const registerRouter = require('./routes/register'); // Rutas para register
@@ -9,6 +10,14 @@ app.use('/static', express.static(__dirname+'/public'));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+//Express session
+app.use(session({
+    secret: "secreto",
+    resave: true,
+    saveUninitialized: true
+}));
+
 
 //Motor de plantillas
 app.set('view engine', 'ejs');

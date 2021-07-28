@@ -51,16 +51,17 @@
             <div class="izquierda">
                 <form action="/login" method="POST">
                     <h2>Inicia sesion</h2>
-                    <input type="text" placeholder="Nombre de usuario" name="user">
-                    <% if (locals.errors && errors.user ) { %>
-                        <p class="error"><%= errors.user.msg %>  </p>
+                    <input type="email" placeholder="Email de usuario" name="email" 
+                    value= "<%= locals.oldData ? oldData.email : null %>">
+                    <% if (locals.errors && errors.email ) { %>
+                        <p class="error"><%= errors.email.msg %>  </p>
                     <% } %>
                     <input type="password" placeholder="Contraseña" name= "password">
                     <% if (locals.errors && errors.password ) { %>
                         <p class="error"><%= errors.password.msg %>  </p>
                     <% } %>
                     <label><input type="checkbox" id="recordarme" value="recordarme"> Recordarme </label><br>
-                    <button type="submit">Inciar</button>
+                    <button type="submit">Iniciar</button>
                 </form>
             </div>
             <div class="derecha">
