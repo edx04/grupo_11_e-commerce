@@ -11,7 +11,7 @@ const controller = {
             res.render("register", {errors: resultValidation.mapped(), oldData: req.body});
         } else {    
             //Guardamos en la base de datos
-            console.log(req.body)
+            req.body.imagen = req.file.filename;
             userModel.guardarUsuario(req.body);
             res.redirect("/");
         }   

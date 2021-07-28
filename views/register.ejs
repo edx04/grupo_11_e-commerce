@@ -50,7 +50,7 @@
         <div class="full">
             <div class="izquierda">
                 <h2>Crea tu cuenta</h2>
-                <form action="/register" method="POST">
+                <form action="/register" method="POST" enctype="multipart/form-data">
                     <input type="text" name="name" placeholder="Nombre"
                     value= "<%= locals.oldData ? oldData.name : null %>"
                     >
@@ -70,6 +70,10 @@
                     <% if (locals.errors && errors.passwordConfirm) { %>
                         <p class="error"><%= errors.passwordConfirm.msg %>  </p>
                     <% } %>
+                    <div>
+                        <label for="imagen" class="form-label">Imagen del perfil</label><br>
+						<input type="file" name="imagen" id="imagen">
+                    </div>
                     <button type="submit">Registrar</button>
             
                 </form>
