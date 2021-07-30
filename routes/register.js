@@ -3,8 +3,10 @@ const router = express.Router();
 const multer = require("multer");
 const path = require("path");
 
-//Middlewares
+//Controlador
 const registerController = require('../controllers/registerController');
+
+//Middlewares
 const validacionesRegister = require('../middlewares/validaciones/validacionesRegister');
 const usuariosMiddleware = require("../middlewares/usuariosMiddleware");
 

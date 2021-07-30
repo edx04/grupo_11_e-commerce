@@ -1,4 +1,5 @@
 const fs = require("fs");
+const bcrypt = require("bcryptjs");
 
 const user = {
     dataBase: "./data/users.json",
@@ -38,7 +39,7 @@ const user = {
         let error = "";
         for (let user of usuarios) {
             if (user.email === usuario.email) {
-                if (user.password === usuario.password) {
+                if (bcrypt.compareSync(usuario.password, user.password)) {
                     loguin = user;
                     break;
                 }

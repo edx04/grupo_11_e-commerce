@@ -9,7 +9,14 @@ const validacionesRegister = [
         .notEmpty().withMessage("Debes de ingresar una contraseña").bail()
         .isLength({ min: 8}).withMessage("La cotraseña debe de tener minimo 8 caracteres"),
     check("passwordConfirm")
-        .notEmpty().withMessage("Debes de confirmar tu contraseña")
+        .notEmpty().withMessage("Debes de confirmar tu contraseña").bail()
+        .custom(((value, { req }) => {
+            if (value !== req.body.password) {
+                throw new Error("Las contraseñas ingresadas no coinciden");
+              }else{
+                  return value;
+              }
+        }))
 ];
 
 module.exports = validacionesRegister;
