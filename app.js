@@ -1,10 +1,21 @@
-const express = require('express');
-const path = require('path');
-const app = express();
+const express= require('express');
+const path= require('path');
+const app= express();
+const session = require('express-session');
+
+const loginRouter = require('./routers/login'); // Rutas para login
+const registerRouter = require('./routers/register'); // Rutas para register
 
 app.set('view engine', 'ejs');
 
 app.use('/static', express.static(__dirname + '/public'));
+
+//Express session
+app.use(session({
+    secret: "secreto",
+    resave: true,
+    saveUninitialized: true
+}));
 
 const mainRouter = require('./routers/index');
 const cartRouter = require('./routers/cart');
@@ -14,6 +25,8 @@ const registerRouter = require('./routers/register')
 const editRouter = require('./routers/editProduct');
 const productsRouter = require('./routers/products');
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 app.use('/', mainRouter);
 app.use('/login', loginRouter);
