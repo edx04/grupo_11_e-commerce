@@ -3,9 +3,6 @@ const path= require('path');
 const app= express();
 const session = require('express-session');
 
-const loginRouter = require('./routers/login'); // Rutas para login
-const registerRouter = require('./routers/register'); // Rutas para register
-
 app.set('view engine', 'ejs');
 
 app.use('/static', express.static(__dirname + '/public'));
