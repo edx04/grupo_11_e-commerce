@@ -38,8 +38,8 @@ const user = {
         let loguin;
         let error = "";
         for (let user of usuarios) {
-            if (user.email === usuario.email) {
-                if (bcrypt.compareSync(usuario.password, user.password)) {
+            if (user.Email === usuario.email) {
+                if (bcrypt.compareSync(usuario.password, user.Contraseña)) {
                     loguin = user;
                     break;
                 }

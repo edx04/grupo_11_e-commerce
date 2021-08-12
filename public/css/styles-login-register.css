@@ -4,7 +4,7 @@
     display: flex;
     border-radius: 20px;
     margin: 0px auto;
-    max-width: 1200px;
+    width: 80vw;
 }
 
 .login-register .izquierda, .derecha{

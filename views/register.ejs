@@ -1,52 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type='text/css'>
-    <link rel="stylesheet" href="static/css/styles.css">
-    <link rel="stylesheet" href="static/css/styles-login-register.css">
-    <title>Home</title>
-</head>
+<%- include('./partials/head') %>
 <body>
-    <header>       
-        <nav class="main-navbar">
-            <div class="main-header">
-                <div class="left-nav">
-                    <div class="boton-nav">
-                        <a href="#" class="hamburger-button">
-                            <i class="fas fa-bars" style="color:lightgray"></i>
-                        </a>
-                    </div>
-                    <div class="logo-nav"> 
-                        <img src="static/images/logo.png" class="logo"> 
-                    </div>
-                </div>
-                <div class="center-nav">
-                    <ul class="menu-center-nav">
-                        <li><a href="#">Guitarras</a></li>
-                        <li><a href="#">Bajos</a></li>
-                        <li><a href="#">Baterías</a></li>
-                        <li><a href="#">Otros instrumentos</a></li>
-                        <li><a href="#">Partes</a></li>
-                        <li><a href="#">Accesorios</a></li>
-                    </ul>
-                </div>    
-                <div class="right-nav">
-                    <div>
-                        <input type="text" placeholder="Search...">
-                    </div>
-                    <ul>
-                        <li><a href="/register">Registro</a></li>
-                        <li><a href="/login">Ingresa</a></li>
-                        <li><a href="/productCart"> <i class="fas fa-shopping-cart"></i></a></li>
-                    </ul>
-                </div>     
-            </div>
-        </nav>
-    </header>
-    <main class="login-register"">
+<%- include('./partials/header') %>
+    <main class="login-register">
         <div class="full">
             <div class="izquierda">
                 <h2>Crea tu cuenta</h2>
@@ -71,11 +28,10 @@
                         <p class="error"><%= errors.passwordConfirm.msg %>  </p>
                     <% } %>
                     <div>
-                        <label for="imagen" class="form-label">Imagen del perfil</label><br>
-						<input type="file" name="imagen" id="imagen">
+                        <label for="image" class="form-label">Imagen del perfil</label><br>
+						<input type="file" name="imagen" id="image">
                     </div>
                     <button type="submit">Registrar</button>
-            
                 </form>
                 <a href="/login">¿Ya tienes cuenta?</a>
             </div>
@@ -85,16 +41,6 @@
             </div>
         </div>
     </main>
-    <footer>
-        <div class="seccion-footer">
-            <h4>Acerca de Nosotros</h4>
-        </div>
-        <div class="seccion-footer">
-            <h4>Contacto</h4>
-        </div>
-        <div class="seccion-footer">
-            <h4>Ubicación</h4>
-        </div>
-    </footer>
+    <%- include('./partials/footer') %>
     </body>
 </html>
