@@ -1,5 +1,5 @@
-const { validationResult } = require("express-validator")
-const userModel = require("../models/user").default;
+const { validationResult } = require("express-validator");
+const userModel = require("../models/user");
 const bcrypt = require("bcryptjs");
 
 const controller = {
@@ -20,7 +20,7 @@ const controller = {
             });
         } else {    
             //Guardamos en la base de datos
-            req.body.imagen = req.file.filename;
+            req.body.image = req.file.filename;
             req.body.password = bcrypt.hashSync(req.body.password, 10);
             delete req.body.passwordConfirm;
             userModel.guardarUsuario(req.body);

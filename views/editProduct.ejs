@@ -1,51 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/styles.css">
-    <link rel="stylesheet" href="static/css/editProduct.css">
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type='text/css'>
-    <title>Edición de productos</title>
-</head>
+<%- include('./partials/head') %>
 <body>
-    <header>       
-        <nav class="main-navbar">
-            <div class="main-header">
-                <div class="left-nav">
-                    <div class="boton-nav">
-                        <a href="#" class="hamburger-button">
-                            <i class="fas fa-bars" style="color:lightgray"></i>
-                        </a>
-                    </div>
-                    <div class="logo-nav"> 
-                        <img src="static/images/logo.png" class="logo"> 
-                    </div>
-                </div>
-                <div class="center-nav">
-                    <ul class="menu-center-nav">
-                        <li><a href="#">Guitarras</a></li>
-                        <li><a href="#">Bajos</a></li>
-                        <li><a href="#">Baterías</a></li>
-                        <li><a href="#">Otros instrumentos</a></li>
-                        <li><a href="#">Partes</a></li>
-                        <li><a href="#">Accesorios</a></li>
-                    </ul>
-                </div>    
-                <div class="right-nav">
-                    <div>
-                        <input type="text" placeholder="Search...">
-                    </div>
-                    <ul>
-                        <li><a href="/register">Registro</a></li>
-                        <li><a href="/login">Ingresa</a></li>
-                        <li><a href="/productCart"> <i class="fas fa-shopping-cart"></i></a></li>
-                    </ul>
-                </div>     
-            </div>
-        </nav>
-    </header>
+<%- include('./partials/header') %>
     <main class="main-edit">
         <div class="titulo-edit">
             <h3>Editar producto</h3>
@@ -129,16 +86,6 @@
             </form>
         </div>  
     </main>
-    <footer>
-        <div class="seccion-footer">
-            <h4>Acerca de Nosotros</h4>
-        </div>
-        <div class="seccion-footer">
-            <h4>Contacto</h4>
-        </div>
-        <div class="seccion-footer">
-            <h4>Ubicación</h4>
-        </div>
-    </footer>
+<%- include('./partials/footer') %>
 </body>
 </html>

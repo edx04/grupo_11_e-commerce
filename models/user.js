@@ -1,5 +1,6 @@
 const fs = require("fs");
 const bcrypt = require("bcryptjs");
+const path = require("path");
 
 const user = {
     dataBase: "./data/users.json",
@@ -29,6 +30,14 @@ const user = {
     },
     eliminar: function(id){
         let usuarios = this.getData();
+        let usuario = [];
+        for (let user of usuarios) {
+            if (user.id === parseInt(id)){
+                usuario = user;
+                break;
+            }
+        }
+        fs.unlinkSync(path.resolve("../public/images/users/" + usuario.image ))
         usuarios = usuarios.filter(usuario => usuario.id !== parseInt(id));
         fs.writeFileSync(this.dataBase, JSON.stringify(usuarios, null, " "));
         return true;

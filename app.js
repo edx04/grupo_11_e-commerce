@@ -7,6 +7,9 @@ app.set('view engine', 'ejs');
 
 app.use('/static', express.static(__dirname + '/public'));
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
 //Express session
 app.use(session({
     secret: "secreto",
@@ -21,9 +24,6 @@ const productRouter = require('./routers/productDetail');
 const registerRouter = require('./routers/register')
 const editRouter = require('./routers/editProduct');
 const productsRouter = require('./routers/products');
-
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
 
 app.use('/', mainRouter);
 app.use('/login', loginRouter);

@@ -25,6 +25,6 @@ let upload = multer({ storage: storage })
 //Rutas
 router.get('/', usuariosMiddleware ,registerController.index);
 
-router.post('/', upload.single("imagen") , validacionesRegister, registerController.register);
+router.post('/', upload.single("image") , validacionesRegister, registerController.register);
 
 module.exports = router;
