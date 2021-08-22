@@ -2,6 +2,8 @@ const express= require('express');
 const path= require('path');
 const app= express();
 const session = require('express-session');
+const cookieParser = require('cookie-parser');
+const cookieRecordarme = require("./middlewares/cookieRecordarmeMiddleware");
 
 app.set('view engine', 'ejs');
 
@@ -16,6 +18,10 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
+
+//Cookie parser
+app.use(cookieParser())
+app.use(cookieRecordarme)
 
 const mainRouter = require('./routers/index');
 const cartRouter = require('./routers/cart');

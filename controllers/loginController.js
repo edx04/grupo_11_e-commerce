@@ -21,6 +21,11 @@ const controller = {
             let login = userModel.iniciarSesion(req.body);
             if (login.id) {
                 req.session.login = login;
+                if (req.body.recordarme) {
+                    res.cookie("recordarme", login.id,{
+                        maxAge: 24 * 60 * 60 * 1000,
+                    })
+                }
                 res.redirect("/");
             } else {
                 res.render("login", {
