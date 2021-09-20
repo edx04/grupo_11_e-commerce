@@ -1,0 +1,113 @@
+/*CSS para login y register*/
+
+.login-register .full{
+    display: flex;
+    border-radius: 20px;
+    margin: 0px auto;
+    width: 80vw;
+}
+
+.login-register .izquierda, .derecha{
+    width: 90%;
+    margin: 0px auto;
+    padding: 20px 0px;
+    background-color: white;
+    border-radius: 20px;
+    font-size: 22px;
+    color: black;
+    max-width: 600px;
+}
+
+.login-register .derecha{
+    display: none;
+}
+
+.error{
+    text-align: center;
+    color: #ff0000;
+}
+
+.login-register{
+    padding: 30px 0px;
+    height: 76vh;
+    margin: auto;
+}
+
+.login-register h2{
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.login-register form input{
+    display: block;
+    text-align: center;
+    margin: 15px auto;
+    border-radius: 10px;
+    width: 90%;
+    height: 40px;
+}
+
+.login-register form label{
+    display: block;
+    text-align: center;
+}
+
+.login-register form input[type=checkbox]{
+    display: inline;
+    text-align: center;
+    margin: 10px auto;
+    width: 20px;
+    height: 20px;
+}
+
+.login-register button{
+    display: block;
+    margin: 25px auto;
+    border: none;
+    padding: 10px 50px;
+    background-color: palegreen;
+    border-radius: 10px;
+    font-size: 1em;
+}
+
+.login-register form input:required:valid {
+    border:3px solid palegreen;
+ }
+
+ .login-register form input:focus{
+     outline: none;
+ }
+
+ .login-register form input:focus:invalid {
+    border:3px solid red;
+ }
+
+ .login-register .izquierda a {
+    color: black;
+    text-align: center;
+    display: block;
+    text-decoration: underline;
+ }
+
+ @media (min-width:769px){
+    /*login-register*/
+    .login-register{
+        height: 90vh;
+    }
+ }
+
+ @media (min-width: 1200px){
+     
+    /*login-register*/
+    .login-register .derecha{
+        display: block;
+    }
+
+    .login-register .full{
+        background-color: white;
+    }
+
+    .login-register .full .izquierda a{
+        display: none;
+    }
+ }

@@ -153,6 +153,24 @@ footer{
         flex-wrap: wrap;
         justify-content: space-around;
     }
+<<<<<<< HEAD
+=======
+
+    /*productDetail*/
+    .detail-img{
+        width: 100%;
+    }
+
+    .detalles{
+        width: 50%;
+    }
+
+    .contenedor-detalle{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+>>>>>>> feature_login-register
 }
 
 @media (min-width: 1200px){

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %>
+<body>
+<%- include('./partials/header') %>
+    <main class="login-register">
+        <div class="full">
+            <div class="izquierda">
+                <h2>Crea tu cuenta</h2>
+                <form action="/register" method="POST" enctype="multipart/form-data">
+                    <input type="text" name="name" placeholder="Nombre"
+                    value= "<%= locals.oldData ? oldData.name : null %>"
+                    >
+                    <% if (locals.errors && errors.name ) { %>
+                        <p class="error"><%= errors.name.msg %>  </p>
+                    <% } %>
+                    <input type="email" placeholder="Email" name="email"
+                    value= "<%= locals.oldData ? oldData.email : null %>">
+                    <% if (locals.errors && errors.email ) { %>
+                        <p class="error"><%= errors.email.msg %>  </p>
+                    <% } %>
+                    <input type="password" name="password" id="password" placeholder="Contraseña">
+                    <% if (locals.errors && errors.password) { %>
+                        <p class="error"><%= errors.password.msg %>  </p>
+                    <% } %>
+                    <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Confirmar contraseña" >
+                    <% if (locals.errors && errors.passwordConfirm) { %>
+                        <p class="error"><%= errors.passwordConfirm.msg %>  </p>
+                    <% } %>
+                    <div>
+                        <label for="image" class="form-label">Imagen del perfil</label><br>
+						<input type="file" name="image" id="image">
+                    </div>
+                    <button type="submit">Registrar</button>
+                </form>
+                <a href="/login">¿Ya tienes cuenta?</a>
+            </div>
+            <div class="derecha">
+                <h2>¿Ya tienes cuenta?</h2>
+                <button onclick="location.href='/login'">Iniciar</button>
+            </div>
+        </div>
+    </main>
+    <%- include('./partials/footer') %>
+    </body>
+</html>

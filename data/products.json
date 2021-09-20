@@ -1,50 +1,646 @@
-[{"id":1,"name":"Lucretia","brand":"Yadel","price":7483.24,"discount":48,"description":"nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede","image":"product_1.jpg","category":"Guitarras","color":["Khaki"]},
-{"id":2,"name":"Francisca","brand":"Linkbuzz","price":2967.75,"discount":26,"description":"nec nisi volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio","image":"product_2.jpg","category":"Guitarras","color":["Purple","Yellow"]},
-{"id":3,"name":"Lars","brand":"Browsecat","price":328.56,"discount":0,"description":"ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque","image":"product_3.jpg","category":"Accesorios","color":["Green","Red","Yellow"]},
-{"id":4,"name":"Morten","brand":"Latz","price":6877.05,"discount":30,"description":"pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero","image":"product_4.jpg","category":"Baterías","color":["Purple","Violet"]},
-{"id":5,"name":"Brok","brand":"Tagpad","price":4355.77,"discount":31,"description":"nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus","image":"product_5.jpg","category":"Partes","color":["Green","Aquamarine"]},
-{"id":6,"name":"Matthus","brand":"Jabbertype","price":9045.08,"discount":0,"description":"tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla","image":"product_6.jpg","category":"Baterías","color":["Violet","Maroon"]},
-{"id":7,"name":"Berkly","brand":"Gigazoom","price":4058.95,"discount":44,"description":"dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam","image":"product_7.jpg","category":"Partes","color":["Turquoise","Aquamarine"]},
-{"id":8,"name":"Harrietta","brand":"Brainlounge","price":7280.12,"discount":0,"description":"posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium","image":"product_8.jpg","category":"Guitarras","color":["Fuscia"]},
-{"id":9,"name":"Angil","brand":"Buzzster","price":1160.28,"discount":50,"description":"integer aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere","image":"product_9.jpg","category":"Accesorios","color":["Indigo","Turquoise","Red","Puce"]},
-{"id":10,"name":"Darby","brand":"Skilith","price":3577.05,"discount":36,"description":"convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium","image":"product_10.jpg","category":"Baterías","color":["Red"]},
-{"id":11,"name":"Kerstin","brand":"Flashset","price":5705.11,"discount":37,"description":"posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede","image":"product_11.jpg","category":"Bajos","color":["Khaki","Khaki","Goldenrod"]},
-{"id":12,"name":"Gwenni","brand":"Dabshots","price":3151.97,"discount":50,"description":"vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa","image":"product_12.jpg","category":"Accesorios","color":["Fuscia","Fuscia"]},
-{"id":13,"name":"Lurette","brand":"Meevee","price":1391.63,"discount":33,"description":"praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit","image":"product_13.jpg","category":"Bajos","color":["Fuscia","Fuscia","Orange"]},
-{"id":14,"name":"Garner","brand":"Mybuzz","price":4799.64,"discount":42,"description":"maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta","image":"product_14.jpg","category":"Guitarras","color":["Purple"]},
-{"id":15,"name":"Chicky","brand":"Fiveclub","price":6433.81,"discount":18,"description":"tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum","image":"product_15.jpg","category":"Partes","color":["Teal"]},
-{"id":16,"name":"Yancy","brand":"Lazzy","price":5176.89,"discount":44,"description":"sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis","image":"product_16.jpg","category":"Accesorios","color":["Red","Puce","Fuscia"]},
-{"id":17,"name":"Elka","brand":"Rhybox","price":8920.01,"discount":14,"description":"viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus","image":"product_17.jpg","category":"Accesorios","color":["Fuscia"]},
-{"id":18,"name":"Emelina","brand":"Babbleopia","price":8085.3,"discount":0,"description":"tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum","image":"product_18.jpg","category":"Baterías","color":["Green"]},
-{"id":19,"name":"Doug","brand":"Pixonyx","price":2326.35,"discount":36,"description":"vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in","image":"product_19.jpg","category":"Bajos","color":["Khaki","Blue"]},
-{"id":20,"name":"Jere","brand":"Realblab","price":2993.68,"discount":42,"description":"aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer","image":"product_20.jpg","category":"Otros instrumentos","color":["Teal","Blue","Violet"]},
-{"id":21,"name":"Elijah","brand":"Talane","price":2517.28,"discount":39,"description":"dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit amet nulla quisque arcu libero rutrum ac lobortis vel dapibus at diam nam","image":"product_21.jpg","category":"Partes","color":["Maroon","Khaki","Violet","Violet"]},
-{"id":22,"name":"Corbett","brand":"Edgepulse","price":9499.98,"discount":0,"description":"massa id lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec","image":"product_22.jpg","category":"Accesorios","color":["Indigo","Indigo","Khaki"]},
-{"id":23,"name":"Leora","brand":"Oyoba","price":9202.38,"discount":40,"description":"integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit","image":"product_23.jpg","category":"Bajos","color":["Khaki","Fuscia","Mauv","Red"]},
-{"id":24,"name":"Cristine","brand":"Skynoodle","price":1345.24,"discount":0,"description":"magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim","image":"product_24.jpg","category":"Guitarras","color":["Crimson","Yellow"]},
-{"id":25,"name":"Morly","brand":"Twimbo","price":6144.46,"discount":45,"description":"ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo","image":"product_25.jpg","category":"Accesorios","color":["Aquamarine","Puce"]},
-{"id":26,"name":"Deedee","brand":"Flipstorm","price":9983.43,"discount":17,"description":"dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et","image":"product_26.jpg","category":"Accesorios","color":["Maroon"]},
-{"id":27,"name":"Editha","brand":"Mita","price":8040.82,"discount":11,"description":"ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed","image":"product_27.jpg","category":"Accesorios","color":["Yellow"]},
-{"id":28,"name":"Reinwald","brand":"Youspan","price":5904.85,"discount":24,"description":"nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam","image":"product_28.jpg","category":"Guitarras","color":["Purple","Teal"]},
-{"id":29,"name":"Gallard","brand":"Jayo","price":1511.48,"discount":43,"description":"ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl","image":"product_29.jpg","category":"Bajos","color":["Indigo","Teal","Turquoise"]},
-{"id":30,"name":"Judy","brand":"Oyoloo","price":7079.36,"discount":19,"description":"mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui","image":"product_30.jpg","category":"Partes","color":["Goldenrod","Indigo","Indigo"]},
-{"id":31,"name":"Eamon","brand":"Katz","price":2384.66,"discount":0,"description":"in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec","image":"product_31.jpg","category":"Guitarras","color":["Maroon"]},
-{"id":32,"name":"Thedric","brand":"Voonte","price":8379.04,"discount":29,"description":"ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum","image":"product_32.jpg","category":"Guitarras","color":["Khaki","Indigo"]},
-{"id":33,"name":"Vinny","brand":"Latz","price":9627.78,"discount":8,"description":"vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas","image":"product_33.jpg","category":"Guitarras","color":["Puce"]},
-{"id":34,"name":"Sallyanne","brand":"Yamia","price":5774.74,"discount":0,"description":"sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis","image":"product_34.jpg","category":"Bajos","color":["Green"]},
-{"id":35,"name":"Pauly","brand":"Skilith","price":3127.31,"discount":29,"description":"id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris","image":"product_35.jpg","category":"Bajos","color":["Turquoise","Orange","Blue","Maroon"]},
-{"id":36,"name":"Maynard","brand":"Flashpoint","price":168.46,"discount":41,"description":"ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in","image":"product_36.jpg","category":"Accesorios","color":["Red","Blue","Aquamarine","Khaki"]},
-{"id":37,"name":"Giffy","brand":"Rhybox","price":4308.16,"discount":44,"description":"ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa","image":"product_37.jpg","category":"Baterías","color":["Khaki"]},
-{"id":38,"name":"Lynda","brand":"Photojam","price":8056.77,"discount":0,"description":"faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis","image":"product_38.jpg","category":"Guitarras","color":["Maroon"]},
-{"id":39,"name":"Britt","brand":"Voonix","price":2836.87,"discount":21,"description":"maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis","image":"product_39.jpg","category":"Otros instrumentos","color":["Turquoise","Crimson","Red","Indigo"]},
-{"id":40,"name":"Valaree","brand":"Quire","price":409.46,"discount":5,"description":"potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat","image":"product_40.jpg","category":"Bajos","color":["Goldenrod"]},
-{"id":41,"name":"Rodie","brand":"Yotz","price":2745.57,"discount":0,"description":"sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget","image":"product_41.jpg","category":"Otros instrumentos","color":["Puce","Teal"]},
-{"id":42,"name":"Clarita","brand":"Meevee","price":4757.42,"discount":21,"description":"nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat","image":"product_42.jpg","category":"Baterías","color":["Puce"]},
-{"id":43,"name":"Gigi","brand":"Gevee","price":2179.05,"discount":40,"description":"morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra","image":"product_43.jpg","category":"Guitarras","color":["Yellow"]},
-{"id":44,"name":"Nehemiah","brand":"Skimia","price":4619.93,"discount":26,"description":"euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at","image":"product_44.jpg","category":"Baterías","color":["Yellow","Red","Teal"]},
-{"id":45,"name":"Winifred","brand":"Oyoba","price":3157.31,"discount":14,"description":"vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum","image":"product_45.jpg","category":"Otros instrumentos","color":["Aquamarine"]},
-{"id":46,"name":"Janek","brand":"Quinu","price":630.73,"discount":20,"description":"ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed","image":"product_46.jpg","category":"Accesorios","color":["Indigo"]},
-{"id":47,"name":"Barnabas","brand":"Jayo","price":4108.89,"discount":30,"description":"dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at","image":"product_47.jpg","category":"Baterías","color":["Fuscia","Puce"]},
-{"id":48,"name":"Juliana","brand":"Devcast","price":8318.31,"discount":0,"description":"in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus","image":"product_48.jpg","category":"Accesorios","color":["Mauv","Aquamarine"]},
-{"id":49,"name":"Amos","brand":"Dynazzy","price":9860.38,"discount":40,"description":"sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in","image":"product_49.jpg","category":"Otros instrumentos","color":["Green","Crimson"]},
-{"id":50,"name":"Gabrila","brand":"Kamba","price":8495.42,"discount":4,"description":"amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis","image":"product_50.jpg","category":"Partes","color":["Blue","Violet","Aquamarine"]}]
+[
+    {
+        "id": 1,
+        "name": "Coronet Ebony",
+        "brand": "Epiphone",
+        "price": 11900,
+        "discount": 10,
+        "description": "Epiphone Coronet es uno de los primeros y más exitosos diseños originales de guitarra eléctrica de cuerpo sólido de Epiphone. La última versión recupera muchas de las características de los primeros modelos Coronet, incluido el cuerpo simétrico de caoba de doble corte con una sola pastilla Epiphone PRO ™ P-90 Dogear, tres en un lado de cabezal Kalamazoo de tamaño reducido con insignia Epiphone Bikini y ajuste de botón de marfil máquinas, y un golpeador de mariposa blanco con el logo de la E en lámina.",
+        "image": "EpiphoneCoronetEbony.jpg",
+        "category": "Guitarras",
+        "color": [
+            "Negro"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "000Jr-10 Dreadnought Junior",
+        "brand": "Martin Guitars",
+        "price": 13600,
+        "discount": 20,
+        "description": "Gracias a su caja de madera sólida de sapele, tapa de sitka de madera sólida, en escala 24\" que te permite una mejor estabilidad de afinación con una comodidad para tocar que amarás. Peso ligero, tamaño compacto con un potente rango medio y calidez.",
+        "image": "Martin000jr-10",
+        "category": "Guitarras",
+        "color": [
+            "Satin"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Usb Pro Caja directa activa",
+        "brand": "Radial",
+        "price": 9000,
+        "discount": 0,
+        "description": "El USB-Pro es un convertidor de audio digital estéreo de alta resolución y caja directa que está diseñado para conectar cualquier computadora y convertir sin problemas las pistas de audio digital en un par de salidas analógicas balanceadas.",
+        "image": "UsbProRadial.jpg",
+        "category": "Accesorios",
+        "color": [
+            "Negro"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Masters Maple",
+        "brand": "Pearl",
+        "price": 7150,
+        "discount": 7,
+        "description": "Estos tambores de Maple dan un contorno único a los tambores, desde la medida mas perqueña de 8”  se escucha el ataque característico de este tipo de madera, es una batería de alta calidad y resistencia, el sonido tiende a definirse perfectamente, el sonido del bass drum es una potente combinación entre la famosa gamo de Maple con contornos sintéticos que Pearl sabe muy bien manejar, esa es la mejor definición que podríamos dar, con esto nos referimos a el ataque del baquetón y los drumsticks se escucha en combinación de el brillo medio y a la vez profundo que otorga esta batería.",
+        "image": "PearlMasterMaple.jpg",
+        "category": "Baterías",
+        "color": [
+            "Rojo",
+            "Negro"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Boss rv-6 pedal compacto",
+        "brand": "Reverb",
+        "price": 4310,
+        "discount": 5,
+        "description": "Combinando el sonido de alto nivel con la versatilidad de amplio rango, el RV-6 lleva la reverberación basada en el pedal al siguiente nivel. Alcanzando más allá de las capacidades de generaciones anteriores, este poderoso pedal emplea la tecnología más reciente y el legendario conocimiento BOSS para hacer fácil la obtención de asombrosos tonos de reverberación instantáneamente. Desde cuartos sutiles a modernos efectos centellantes que brindan largas reverberaciones evocativas, el RV-6 envuelve tu tono en un opulento ambiente espacioso que inspira infinitamente.",
+        "image": "Rv6Boss.jpg",
+        "category": "Partes",
+        "color": [
+            "Negro"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Stage Custom Hip Shell Pack",
+        "brand": "Yamaha",
+        "price": 11045,
+        "discount": 0,
+        "description": "Una batería compacta, perfecta para viajar, tocar en la calle y practicar en casa. El Set de BIRCH (abedul) de 6 capas, ofrece un sonido grave que se equilibra con armónicos sostenidos.",
+        "image": "YamahaStageCustom.jpg",
+        "category": "Baterías",
+        "color": [
+            "Madera natural",
+            "Negro",
+            "Verde"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Digital Px-S3000Bk",
+        "brand": "Casio",
+        "price": 285600,
+        "discount": 30,
+        "description": "Piano digital de 88 Teclas, Rango de tono ajustable (-2 a +2 octavas), transposición de Teclas (-12 a + 12 semitonos), Cambio de octava (-2 a 0 a +2 octavas), 700 tonos, polifonía Máxima de 192 notas, Respuesta al tacto con 5 Niveles de sensibilidad.",
+        "image": "CasioDigitalPxS3000Bk.jpg",
+        "category": "Pianos",
+        "color": [
+            "Negro"
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Telecaster anniversary",
+        "brand": "Fender",
+        "price": 20000,
+        "discount": 0,
+        "description": "La Telecaster 75th Anniversary tiene un acabado en Diamond Anniversary metálico con un cabezal pintado a juego. El mástil de arce presenta un perfil de \"C moderno\", trastes jumbo medianos y un acabado satinado para una comodidad y un toque supremo. Las pastillas Telecaster de estilo vintage de los años 50 brindan un tono cálido y vibrante, mientras que un puente de 6 selletas mejora la entonación. ",
+        "image": "TelecasterAnniversary.jpg",
+        "category": "Guitarras",
+        "color": [
+            "Diamond metálico"
+        ]
+    },
+    {
+        "id": 9,
+        "name": "EJ10",
+        "brand": "D'Addario",
+        "price": 205,
+        "discount": 10,
+        "description": "Las EJ10, el calibre más ligero de cuerdas acústicas de D'Addario, son ideales para principiantes o jugadores que prefieren un tono más suave y una fácil flexión.",
+        "image": "DaddarioEj10.jpg",
+        "category": "Partes",
+        "color": []
+    },
+    {
+        "id": 10,
+        "name": "TD-50K",
+        "brand": "Roland",
+        "price": 123500,
+        "discount": 13,
+        "description": "Como parte de la nueva serie emblemática de V-Drums, el TD-50K ofrece una expresión sin igual para el rendimiento de alto nivel, sesiones de práctica exigentes y trabajo de estudio profesional. Construido sobre los cimientos del nuevo módulo TD-50 con Prismatic Sound Modeling, este kit electrónico proporciona los sonidos más impresionantes y amplios de Roland hasta el momento.",
+        "image": "RolandTD-50K.jpg",
+        "category": "Baterías",
+        "color": [
+            "Negro"
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Sr300Pw",
+        "brand": "Ibanez",
+        "price": 8730,
+        "discount": 37,
+        "description": "El bajo Ibanez SR300 pertenece a la serie SR de Ibanez que, desde hace 25 años, ofrece una alternativa moderna a los bajistas. Dada la popularidad de esta gama de bajos eléctricos, Ibanez continua mejorando los bajos SR para responder a las necesidades de los intérpretes y a sus diferentes presupuestos. Independientemente de las especificaciones de cada modelo el corazón de los bajos SR es el mismo: mástil suave y rápido, cuerpo ligero y electrónica de calidad.",
+        "image": "SR300EPW.jpg",
+        "category": "Bajos",
+        "color": [
+            "Blanco",
+            "Nogal"
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Atril Para Tarola 740",
+        "brand": "Yamaha",
+        "price": 1451.50,
+        "discount": 0,
+        "description": "Soporte para tarola de peso medio con patas simples y grandes cubiertas de goma.",
+        "image": "740Yamaha.jpg",
+        "category": "Accesorios",
+        "color": [
+            "Cromo"
+        ]
+    },
+    {
+        "id": 13,
+        "name": "TRBX305",
+        "brand": "Yamaha",
+        "price": 10391.63,
+        "discount": 0,
+        "description": "Combina el mejor tono de la caoba con una versatilidad inédita hasta la fecha. Incorpora innovaciones a nivel de EQ desarrolladas en colaboración con los mejores artistas de la marca, como el selector “Performance EQ” de 5 posiciones. El confort del mástil híbrido de 5 piezas y el nuevo cuerpo de diseño estilizado son características pensadas para satisfacer al músico de hoy en día, abierto a varios estilos musicales.",
+        "image": "YamahaTRBX305.jpg",
+        "category": "Bajos",
+        "color": [
+            "Rojo"
+        ]
+    },
+    {
+        "id": 14,
+        "name": "312ce N",
+        "brand": "Taylor",
+        "price": 47099.50,
+        "discount": 40,
+        "description": "Nuestro Grand Concert 312ce-N de cuerdas de nailon equilibra el tono brillante y concentrado de sapeli con los sabores naturalmente suaves del sonido de nailon. Esto es una excelente opción para los músicos que prefieren la comodidad de una acústica de cuerpo pequeño y anhelan características modernas de cuerdas de acero como un cutaway y una pastilla incorporada en una guitarra de cuerdas de nailon. Los detalles adicionales incluyen un mástil de 1-7 / 8 pulgadas, encuadernación negra, incrustaciones de diamantes pequeños en acrílico italiano en el diapasón y una roseta de 3 anillos. La guitarra incorpora un cutaway veneciano para un fácil acceso al registro superior, viene equipada con la pastilla ES-N de Taylor para un gran tono amplificado y se envía en un estuche rígido de lujo Taylor.",
+        "image": "Taylor312ceN.png",
+        "category": "Guitarras",
+        "color": [
+            "Madera natural"
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Samba Mod. Tbrs",
+        "brand": "Meinl",
+        "price": 100,
+        "discount": 10,
+        "description": "La baqueta para pandero Meinl fabricada en plástico de gran resistencia te ayudará a enriquecer tus sonidos. ",
+        "image": "MeinlSamba.png",
+        "category": "Partes",
+        "color": [
+            "Negro",
+            "Rojo"
+        ]
+    },
+    {
+        "id": 16,
+        "name": "Parche S13H30",
+        "brand": "Evans",
+        "price": 517.89,
+        "discount": 20,
+        "description": "Para tarolas de 13\" pulgadas, serie hazy 300, fabricado con una sola capa de película de 3 milésimas de pulgada, especial para resaltar el sonido del entorchado, gran brillantez y sensibilidad, amplio rango dinámico, hecho en usa.",
+        "image": "ParcheEvansS13H30.jpg",
+        "category": "Accesorios",
+        "color": [
+            "Blanco"
+        ]
+    },
+    {
+        "id": 17,
+        "name": "Boquilla para Sax Tenor TS4C",
+        "brand": "Yamaha",
+        "price": 932,
+        "discount": 15,
+        "description": "Ideal para calquier modelo o marca de Saxofon tenor",
+        "image": "TenorTS4C.png",
+        "category": "Accesorios",
+        "color": [
+            "Negro"
+        ]
+    },
+    {
+        "id": 18,
+        "name": "Superstar Classic",
+        "brand": "Tama",
+        "price": 34500,
+        "discount": 23,
+        "description": "Los cascos finos de 100% arce característicos de TAMA dotan al Superstar Classic de tonos intensos y audaces para despertar tus ritmos y potenciar tus ritmos de fondo. Las orejetas de baja masa y bajo perfil reducen el peso de las carcasas para mejorar la resonancia en todos los ámbitos. Y el sistema Star-Mount de TAMA le brinda una apertura inmejorable desde sus toms altos sin soportes. Sweetwater sabe que los entusiastas de TAMA apreciarán los aros de bombo de arce a juego de este Superstar Classic y las clásicas insignias T de TAMA.",
+        "image": "TamaSuper.png",
+        "category": "Baterías",
+        "color": [
+            "Naranja"
+        ]
+    },
+    {
+        "id": 19,
+        "name": "Spectra Bass Sbx V",
+        "brand": "Jackson",
+        "price": 11780,
+        "discount": 36,
+        "description": "Con un estilo moderno, un tono flexible y un valor incomparable, el Jackson X Series Spectra Bass SBX V lleva al jugador aventurero a odisea de bajos audaces, lanzando una entrada totalmente nueva e imponente en la formidable línea de bajos de cuello a cuerpo de Jackson El estilo de carrocería compensado de Spectra Bass fue diseñado de manera innovadora con el músico en mente. ",
+        "image": "JacksonSpectra.jpg",
+        "category": "Bajos",
+        "color": [
+            "Azul claro"
+        ]
+    },
+    {
+        "id": 20,
+        "name": "Saxofon Alto YAS 26",
+        "brand": "Yamaha",
+        "price": 25000,
+        "discount": 5,
+        "description": "El Saxofon YAS-26 de Yamaha es uno de los favoritos en el mundo debido a que es un muy bien producto precio y calidad ya que cuenta con una base del tudel rediseñada para una rapida respuesta y facil desempeño al tocar ademas de incrementar la durabilidad de el mecanismo.",
+        "image": "SaxofonAlto.png",
+        "category": "Otros instrumentos",
+        "color": [
+            "Dorado"
+        ]
+    },
+    {
+        "id": 21,
+        "name": "Conector NL4FC ",
+        "brand": "Neutrik",
+        "price": 420,
+        "discount": 33,
+        "description": "Se acopla con un conector de chasis de 4 polos y se pone en contacto con + 1 / -1",
+        "image": "NeutrikNL4FC.png",
+        "category": "Partes",
+        "color": []
+    },
+    {
+        "id": 22,
+        "name": "Funda Rigida FE1225",
+        "brand": "Fender",
+        "price": 1790,
+        "discount": 0,
+        "description": "La bolsa de concierto F1225 Series de Fender es la mejor opción para mantener su guitarra eléctrica segura mientras viaja. Con nuestra forma icónica de instrumento asimétrico, su capa exterior duradera está construida con poliéster 1200 Denier resistente que protege contra daños sin rasgarse y rasgarse.",
+        "image": "FenderFe1225.png",
+        "category": "Accesorios",
+        "color": [
+            "Negro"
+        ]
+    },
+    {
+        "id": 23,
+        "name": "Bajo electroacustico CB-60SCE ",
+        "brand": "Fender",
+        "price": 5689,
+        "discount": 20,
+        "description": "La serie Classic Design se completa con el CB-60SCE, un bajo acústico muy por encima de los demás de su clase. Este modelo utiliza el mismo perfil de mástil delgado y cómodo que se encuentra en todas las guitarras de Classic Design.",
+        "image": "BajoFenderElectro.jpg",
+        "category": "Bajos",
+        "color": [
+            "Madera natural"
+        ]
+    },
+    {
+        "id": 24,
+        "name": "Guitarra C40",
+        "brand": "Yamaha",
+        "price": 2995,
+        "discount": 10,
+        "description": "C40 ha sido galardonado en la última edición de los premios de la industria musical (M.I.A., Music Industry Awards). Desde su lanzamiento a principios de la década de los ‘90s, nuestra querida C40 ha ido coleccionando premios y reconocimientos, estableciéndose por derecho propio como la guitarra clásica mejor valorada entre profesores, alumnos y guitarristas principiantes, gracias a su increíble relación calidad-precio.",
+        "image": "YamahaC40.jpg",
+        "category": "Guitarras",
+        "color": [
+            "Madera natural"
+        ]
+    },
+    {
+        "id": 25,
+        "name": "Cable de Instrumento de plug a plug",
+        "brand": "Adam Hall ",
+        "price": 225,
+        "discount": 5,
+        "description": "Cable de instrumento con tapones TRS de Adam Hall - probada desde 1980, robusto, y asequible. Este cable garantiza protección óptima contra el ruido de fondo con blindaje en espiral y un blindaje adicional. Equipado con conectores desequilibrados rectos.",
+        "image": "CablePlugPlug.png",
+        "category": "Accesorios",
+        "color": []
+    },
+    {
+        "id": 26,
+        "name": "Adaptador de Corriente PSB-120 ",
+        "brand": "Roland",
+        "price": 1300,
+        "discount": 17,
+        "description": "El adaptador de alimentación PSB-120 se puede utilizar en lugar del adaptador de PSB-1U y trabaja con modelos de teclado Roland",
+        "image": "RolandPSB-120.png",
+        "category": "Accesorios",
+        "color": []
+    },
+    {
+        "id": 27,
+        "name": "Sordina para Trompeta Silent XB7X",
+        "brand": "Yamaha",
+        "price": 4670,
+        "discount": 11,
+        "description": "Necesitas tocar cuando y como tú quieras, sin estar atado a un momento o lugar. La nueva generación de Yamaha SILENT Brass™ lo hace posible. El nuevo SILENT Brass™ consiste en una sordina más pequeña y ligera, de soplo más libre y de un Personal Studio™, que ofrece el sistema exclusivo de Yamaha Brass Resonance Modeling. Juntos proporcionan el tono acústico natural que obtienes cuando tocas sin una sordina, haciéndote sentir que realmente estás tocando sin ella.",
+        "image": "YamahaSilentXB7X.png",
+        "category": "Accesorios",
+        "color": [
+            "Negro"
+        ]
+    },
+    {
+        "id": 28,
+        "name": "Boquilla Para Trompeta 5I1",
+        "brand": "Emo Parduba ",
+        "price": 734,
+        "discount": 25,
+        "description": "El diseño patentado inusual de la boquilla Doble Taza permite una gran facilidad de tocar en el registro alto.",
+        "image": "EmoParduba5I1.png",
+        "category": "Asesorios",
+        "color": [
+            "Dorado",
+            "Cromo"
+        ]
+    },
+    {
+        "id": 29,
+        "name": "FBJ-400 4 cuerdas",
+        "brand": "LTD",
+        "price": 23560,
+        "discount": 40,
+        "description": "El FBJ-400 tiene elementos de diseño clásico como un mástil de arce atornillado con diapasón de ébano de Macassar y marcadores laterales que brillan en la oscuridad en un cuerpo de caoba a una escala de 34 ”, e incluye el excelente EMG P-HZ / EMG LJ- Pastillas HZ con cubiertas rojas de sus otros modelos exclusivos para una versatilidad sónica.",
+        "image": "BajoLTD.jpg",
+        "category": "Bajos",
+        "color": [
+            "Negro satinado"
+        ]
+    },
+    {
+        "id": 30,
+        "name": "Cable Midi Msc-50",
+        "brand": "Roland",
+        "price": 194,
+        "discount": 16,
+        "description": "Accesorio para teclados, máquinas de ritmo y todo equipo con conectividad MIDI de conectores tradicionales.",
+        "image": "RolandMsc-50.png",
+        "category": "Partes",
+        "color": [
+            "Negro"
+        ]
+    },
+    {
+        "id": 31,
+        "name": "322CE",
+        "brand": "Taylor",
+        "price": 62400,
+        "discount": 5,
+        "description": "El Grand Concert 322ce con corte de caoba atraerá a los jugadores con estilo de dedos con raíces que anhelan una experiencia de juego cómoda. El mástil de 24-7 / 8 pulgadas facilita el traste y las cuerdas de flexión, mientras que el emparejamiento de madera de caoba / madera negra produce una respuesta tonal sorprendentemente cálida y dinámica para un cuerpo más pequeño, reforzado aún más por la adición de refuerzo de clase V de este año. ",
+        "image": "Taylor322ce.jpg",
+        "category": "Guitarras",
+        "color": [
+            "Madera oscuro"
+        ]
+    },
+    {
+        "id": 32,
+        "name": "American Dream AD17e Blacktop",
+        "brand": "Taylor",
+        "price":39600,
+        "discount": 26,
+        "description": "Construido con fondo y aros de ovangkol macizo y una tapa de abeto macizo negro, el Grand Pacific AD17e se impone con una estética retro audaz que complementa su tono de inspiración vintage. Ovangkol aporta calidez y un agradable enfoque de rango medio, que, junto con nuestra arquitectura de refuerzo V-Class, ofrece una asombrosa combinación tonal de potencia, sustain y musicalidad.",
+        "image": "BlackTop.jpg",
+        "category": "Guitarras",
+        "color": [
+            "Negro"
+        ]
+    },
+    {
+        "id": 33,
+        "name": "Electro Acustica 418E",
+        "brand": "Taylor",
+        "price": 29627,
+        "discount": 8,
+        "description": "El 418e de Taylor combina la potencia y la complejidad tonal de nuestra Gran Orquesta de gran cuerpo con el amplio rango de frecuencia de ovangkol y abeto de África. El resultado es una voz amplia y dinámica que rebosa de detalles. Tan grande y audaz como es el sonido, la Grand Orchestra es increíblemente equilibrada y sensible para un cuerpo grande, lo que lo convierte en un instrumento sorprendentemente versátil que también puede responder a la llamada de arreglos exuberantes de dedos.",
+        "image": "Taylor418E.jpg",
+        "category": "Guitarras",
+        "color": [
+            "Madera natural"
+        ]
+    },
+    {
+        "id": 34,
+        "name": "Affinity Jazz Bass V",
+        "brand": "Fender",
+        "price": 5775,
+        "discount": 0,
+        "description": "Tiene la apariencia y el tono que todo el mundo conoce y ama, a un precio muy económico. Ideal para los bajistas modernos que tienen un alcance extendido en el extremo bajo, lo más destacado de este bajo son las pastillas de Jazz Bass V que gruñen y pegan. ",
+        "image": "AffinityJazz.jpg",
+        "category": "Bajos",
+        "color": [
+            "Negro con blanco"
+        ]
+    },
+    {
+        "id": 35,
+        "name": "Cherry EB-3",
+        "brand": "Epiphone",
+        "price": 13127,
+        "discount": 20,
+        "description": "Una recreación deslumbrante de la maravilla vintage con todo el tono y la sensación del original sin el precio y los problemas vintage. El Epiphone EB-3 viene con la Garantía limitada de por vida de Epiphone y el servicio al cliente Gibson 24/7/365. Visite hoy a su distribuidor autorizado de Epiphone y descubra el sonido de una leyenda con el bajo EB-3. ",
+        "image": "EpiphoneCherry.jpg",
+        "category": "Bajos",
+        "color": [
+            "Rojo"
+        ]
+    },
+    {
+        "id": 36,
+        "name": "Cable de 3.5mm estereo a 2 RCA",
+        "brand": "LD Systems",
+        "price": 168.50,
+        "discount": 40,
+        "description": "Cable adaptador desde el conector mini TRS de 3,5 milímetros a 2 x RCA. Para conectar fuentes de señal externas, por ejemplo, reproductores de MP3 o tarjetas de sonido de PC.",
+        "image": "LDSystems.png",
+        "category": "Accesorios",
+        "color": []
+    },
+    {
+        "id": 37,
+        "name": "Amplificador Katana Mini",
+        "brand": "Boss",
+        "price": 4308,
+        "discount": 33,
+        "description": "Los consagrados amplificadores BOSS Katana han recibido elogios de guitarristas por todos lados gracias a su fantástico sonido, textura sónica, efectos integrados a bordo y valor genial. Ahora, el Katana-Mini hace accesible el solemne sonido Katana en un pequeño amplificador que puede ir a cualquier lugar y que es operado por baterías. ",
+        "image": "BossKatanaMini.png",
+        "category": "Accesorios",
+        "color": [
+            "Negro"
+        ]
+    },
+    {
+        "id": 38,
+        "name": "Cd-60s",
+        "brand": "Fender",
+        "price": 3056,
+        "discount": 0,
+        "description": "El CD-60S All-Mahogany incluye una tapa de caoba extensamente uno de nuestros modelos más populares para un sabor claramente orgánico. Es ideal para los jugadores que buscan un acorazado asequible de alta calidad con gran tono y excelente jugabilidad. ",
+        "image": "FenderSunburst.jpg",
+        "category": "Guitarras",
+        "color": [
+            "Sunburst"
+        ]
+    },
+    {
+        "id": 39,
+        "name": "Flauta transversal YFL212",
+        "brand": "Yamaha",
+        "price": 2836,
+        "discount": 21,
+        "description": "Con una abertura de doble ensanche y un diseño exclusivo de rebaje del orificio de la embocadura que proporciona una respuesta excelente y un tono intenso y cálido, la cabeza CY ayuda a los principiantes a aprender rápidamente a producir un bello sonido. Los intérpretes más experimentados apreciarán su respuesta rápida y uniforme en todos los registros.",
+        "image": "YamahaYFL212.png",
+        "category": "Otros instrumentos",
+        "color": [
+            "Blanco"
+        ]
+    },
+    {
+        "id": 40,
+        "name": "HI-BB-SB",
+        "brand": "Hofner ",
+        "price": 13400,
+        "discount": 5,
+        "description": "Hofner ha creado una replica del bajo de Paul McCartney Violín Bass Vintage 62, históricamente bastante exacta para satisfacer incluso al fan más exigente de los Beatles.  ",
+        "image": "HofnerSunburst.jpg",
+        "category": "Bajos",
+        "color": [
+            "Sunburst"
+        ]
+    },
+    {
+        "id": 41,
+        "name": "Trombon De Embolos Bach Sib Vt501",
+        "brand": "Vincent Bach",
+        "price": 16456,
+        "discount": 15,
+        "description": "Trombón de válvula Bb de la serie VT501.",
+        "image": "VincentBach.png",
+        "category": "Otros instrumentos",
+        "color": [
+            "Dorado"
+        ]
+    },
+    {
+        "id": 42,
+        "name": "Flauta Piccolo YPC62",
+        "brand": "Yamaha",
+        "price": 29650,
+        "discount": 21,
+        "description": "Un antiguo favorito de los músicos profesionales, el YPC-62 puede encontrar en muchas de las mejores orquestas del mundo. Caracterizado por una excelente entonación y jugabilidad. Cuenta con una cabeza de alpaca y cuerpo de granadilla sazonada para un tono cálido y completo",
+        "image": "YamahaYPC62.jpg",
+        "category": "Otros instrumentos",
+        "color": [
+            "Madera oscuro"
+        ]
+    },
+    {
+        "id": 43,
+        "name": "Player STRATOCASTER",
+        "brand": "Fender",
+        "price": 20179,
+        "discount": 40,
+        "description": "El sonido inspirador de una Stratocaster es uno de los fundamentos de Fender. Con este clásico sonido de agudos campanilleantes, medios pronunciados y bajos robustos, combinados con una articulación cristalina, la Player Stratocaster está repleta de auténtico estilo y sensación Fender. Está lista para hacer realidad tus ideas musicales, es lo suficientemente versátil para cualquier estilo de música y es la plataforma perfecta para crear tu propio sonido. ",
+        "image": "FenderPlayerSTRATOCASTER.jpg",
+        "category": "Guitarras",
+        "color": [
+            "Naranja"
+        ]
+    },
+    {
+        "id": 44,
+        "name": "Hyper-D 6 Piezas",
+        "brand": "Tama",
+        "price": 4619,
+        "discount": 26,
+        "description": "Nuestra mayor prioridad en la producción de la serie de baterías Superstar fue el sonido. El carácter completo y poderoso y la rica resonancia de los tambores Superstar se lograron utilizando cáscaras de arce cuidadosamente seleccionadas y enfocándose intensamente en el moldeado de la cáscara y la forma del borde del rodamiento.",
+        "image": "BateriaTamaSuperstar.png",
+        "category": "Baterías",
+        "color": [
+            "Azul"
+        ]
+    },
+    {
+        "id": 45,
+        "name": "Pandero TA-4110-43",
+        "brand": "Remo",
+        "price": 700,
+        "discount": 14,
+        "description": "El pandero remo cuenta con un tono brillante con discos (jingle) de sonido abierto para su uso en aplicaciones de culto. Construido con el material Acousticon y parche de mylar con gráfico, pre-afinados con 1 o 2 hileras de conjuntos de jingle dependiendo del modelo. El pandero es ligero, duradero con mucha proyección de sonido, disponible en varias medidas y estampados.",
+        "image": "RemoPrizmaticTA-4110-43.png",
+        "category": "Otros instrumentos",
+        "color": [
+            "Prizmatic"
+        ]
+    },
+    {
+        "id": 46,
+        "name": "Pedalera de efectos GT-1000",
+        "brand": "Boss",
+        "price": 29450,
+        "discount": 20,
+        "description": "Procesador/amplificador de guitarra Flagship con una calidad de sonido inigualable y una expresividad sin igual AD/DA de 32 bits líder en la industria, procesamiento de coma flotante de 32 bits y velocidad de muestreo de 96 kHz en todo Motor BOSS DSP de última generación, diseñado específicamente para aplicaciones musicales",
+        "image": "BossGT-1000.png",
+        "category": "Accesorios",
+        "color": [
+            "Negro"
+        ]
+    },
+    {
+        "id": 47,
+        "name": "Base para pedales RD-B2",
+        "brand": "Joyo",
+        "price": 1200,
+        "discount": 20,
+        "description": "La placa de pedal tiene un diseño hueco muy especial, que permite una organización conveniente de los cables. Además, su forma única de fijar la fuente de alimentación (no incluida) mediante el uso de una cuerda elástica adicional, se adapta a cualquier volumen de fuente de alimentación",
+        "image": "JoyoRD-B2.png",
+        "category": "Accesorios",
+        "color": [
+            "Negro"
+        ]
+    },
+    {
+        "id": 48,
+        "name": "Procesador para Voz VE-20",
+        "brand": "Roland",
+        "price": 8318.50,
+        "discount": 0,
+        "description": "El nuevo VE-20 es fácil de usar y ha sido diseñado desde la raíz para los cantantes, presentando la tecnología de algunos de los mejores efectos de voz del mercado. Al pisar el pedal de cambio, puedes añadir al instante exuberantes capas de voz y armonías a tu canto, agregar corrección de tono en tiempo real, etc.",
+        "image": "RolandVE-20.png",
+        "category": "Accesorios",
+        "color": [
+            "Rojo con negro"
+        ]
+    },
+    {
+        "id": 49,
+        "name": "Acordeon CORONA II XTREME",
+        "brand": "Hohner",
+        "price": 43560,
+        "discount": 20,
+        "description": "El Corona II Xtreme se hace para el músico profesional que exige tanto la calidad y funcionalidad. Características de 34 botones de acción, dinámico, tecnología diapasón sin ruido, el bajo de la correa ajustable, funda mejorado y correas acondicionadas incluido.",
+        "image": "HohnerBlancoCORONA.png",
+        "category": "Otros instrumentos",
+        "color": [
+            "Blanco"
+        ]
+    },
+    {
+        "id": 50,
+        "name": "Colofonia Piranito 900700",
+        "brand": "Pirastro",
+        "price": 192.50,
+        "discount": 15,
+        "description": "Uno de los accesorios que no pueden faltar para violin o viola y una de las marcas preferidas",
+        "image": "Piranito.jpg",
+        "category": "Partes",
+        "color": []
+    }
+]

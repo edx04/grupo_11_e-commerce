@@ -18,6 +18,9 @@ Público objetivo: Sitio dirigido tanto a músicos principiantes como a profesio
 
 Referencias:
 
+Los sitios de referencia seleccionados son de compañías muy reconocidas en el mundo de la música y, al contar con una estructura bastante similar entre ellas, consideramos que son una buena fuente de inspiración para desarrollar el diseño de nuestro sitio web. 
+
+
 - https://www.guitarcenter.com/
 
 - https://mx.yamaha.com/index.html
