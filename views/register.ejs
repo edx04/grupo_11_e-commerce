@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('./partials/head') %>
+<script src="/static/js/validacionesRegister.js"></script>
 <body>
 <%- include('./partials/header') %>
     <main class="login-register">
@@ -8,13 +9,13 @@
             <div class="izquierda">
                 <h2>Crea tu cuenta</h2>
                 <form action="/register" method="POST" enctype="multipart/form-data">
-                    <input type="text" name="name" placeholder="Nombre"
+                    <input type="text" name="name" placeholder="Nombre" id="nombre"
                     value= "<%= locals.oldData ? oldData.name : null %>"
                     >
                     <% if (locals.errors && errors.name ) { %>
                         <p class="error"><%= errors.name.msg %>  </p>
                     <% } %>
-                    <input type="email" placeholder="Email" name="email"
+                    <input type="email" placeholder="Email" name="email" id="email"
                     value= "<%= locals.oldData ? oldData.email : null %>">
                     <% if (locals.errors && errors.email ) { %>
                         <p class="error"><%= errors.email.msg %>  </p>

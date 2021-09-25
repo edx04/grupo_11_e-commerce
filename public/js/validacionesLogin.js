@@ -6,7 +6,7 @@ window.addEventListener('load', function() {
     let password = document.querySelector("#password");
   
     email.addEventListener("blur", function(){
-        if (email.value == ""){
+        if (email.value === ""){
             console.log("Debes de ingresar un email")
         }else if (!validarEmail(email.value)){
             console.log("Debes de ingresar un email valido")
@@ -14,17 +14,17 @@ window.addEventListener('load', function() {
     });
 
     password.addEventListener("blur", function(){
-        if (password.value == ""){
+        if (password.value === ""){
             console.log("Debes de ingresar una contraseña");
         }
     });
   });
 
-  function validarEmail(correo) {
+function validarEmail(correo) {
     let re = /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
     if (re.exec(correo)){
         return true;
     } else {
         return false;
     }
-  }
+}
