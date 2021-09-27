@@ -2,24 +2,23 @@ DROP DATABASE IF EXISTS music_db;
 
 CREATE DATABASE music_db;
 USE music_db;
-
 DROP TABLE IF EXISTS `brands`;
 CREATE TABLE `brands` (
-	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`id` int(11) NOT NULL AUTO_INCREMENT UNIQUE,
   `name` varchar(50) NOT NULL,
     PRIMARY KEY (`id`)
 );
 
 DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories` (
-	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`id` int(11) NOT NULL AUTO_INCREMENT UNIQUE,
   `name` varchar(50) NOT NULL,
 PRIMARY KEY (`id`)
 );
 
 DROP TABLE IF EXISTS `colors`;
 CREATE TABLE `colors` (
-	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`id` int(11) NOT NULL AUTO_INCREMENT UNIQUE,
   `name` varchar(50) NOT NULL,
 PRIMARY KEY (`id`)
 );
@@ -27,12 +26,12 @@ PRIMARY KEY (`id`)
 
 DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
-	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`id` int(11) NOT NULL AUTO_INCREMENT UNIQUE,
   `name` varchar(50) NOT NULL,
-  `price` int(11) NOT NULL,
+  `price` float(10) NOT NULL,
   `discount` int(11) NOT NULL DEFAULT 0,
-  `description` varchar(200) NOT NULL,
-  `image` varchar(100) NOT NULL DEFAULT 'default.jpg',
+  `description` text NOT NULL,
+  `image` varchar(255) NOT NULL DEFAULT 'default.jpg',
   `id_color` int(11) ,
   `id_categories` int(11) ,
   `id_brand` int(11) , 
@@ -48,19 +47,19 @@ CREATE TABLE `products` (
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users`(
-   `id` int(11) NOT NULL AUTO_INCREMENT,
+   `id` int(11) NOT NULL AUTO_INCREMENT UNIQUE,
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password`varchar(50) NOT NULL ,
+  `password`text NOT NULL ,
   `image` varchar(100) NOT NULL DEFAULT 'default.jpg',
   PRIMARY KEY (`id`)
 );
 
 DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders`(
-   `id` int(11) NOT NULL AUTO_INCREMENT,
+   `id` int(11) NOT NULL AUTO_INCREMENT UNIQUE,
   `id_user` int(11) NOT NULL,
-  `total` int(11) NOT NULL,
+  `total` float(11) NOT NULL,
   `date` datetime, 
    PRIMARY KEY (`id`),
    KEY `orders_user_id_foreign` (`id_user`),
@@ -69,11 +68,11 @@ CREATE TABLE `orders`(
 
 DROP TABLE IF EXISTS `orderProducts`;
 CREATE TABLE `orderProducts`(
-	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`id` int(11) NOT NULL AUTO_INCREMENT UNIQUE,
   `id_order` int(11) NOT NULL,
   `id_product` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
-  `subtotal` int(11) NOT NULL,
+  `subtotal` float(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `orderproduct_order_id_foreign` (`id_order`),
   KEY `orderproduct_product_id_foreign` (`id_product`),
