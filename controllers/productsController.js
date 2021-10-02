@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const db = require('../src/database/models');
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -32,6 +33,26 @@ const controller = {
     /*** Acción de creación (a donde se envía el formulario) ***/
     store: (req, res) => {
         //Agregamos a la base de datos
+        console.log(req.body)
+        db.Colors.findOne({
+            where: {
+                name: req.body.color
+            }
+        }).then(color => {
+            console.log(color.id)
+            req.body.colorId= color.id
+            db.Products.create({
+                name:req.body.producto,
+                price: req.body.precio,
+                description:req.body.descripcion,
+                image: req.body.perfil,
+                id_color: req.body.colorId,
+                id_categories : req.body.categoria
+            })
+            
+            })
+            
+
         res.redirect("/products");
     },
 
