@@ -26,8 +26,19 @@ const controller = {
 
     /*** Detalle de un producto en particular ***/
     detail: (req, res) => {
-        let idProducto = req.params.id - 1;
-        res.render("productDetail", { product: products[idProducto], toThousand: toThousand });
+        let product
+        let idProducto = req.params.id -1;
+        db.Products.findByPk(req.params.id,{
+            include: [{ association: "color" }, { association: "brand" }, { association: "category" }]
+        }).then(user => {
+            console.log(user.color.name)
+            product = user
+            res.render("productDetail", { product: product });
+        })
+
+       
+
+        
     },
 
     /*** Acción de creación (a donde se envía el formulario) ***/

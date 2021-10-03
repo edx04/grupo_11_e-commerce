@@ -9,10 +9,10 @@
             <li><a href="/">Categoría</a></li>
             <li>Producto</li>
           </ul>
-        <h2>Nombre del producto</h2>
+        <h2><%- product.name %></h2>
         <div class="contenedor-detalle"> 
             <div class="contenedor-img-detalle">
-                <img src="static/images/mas-vendido-1.jpg" alt="Guitarra Fender" class="detail-img">
+                <img src="<%- product.image %>" alt="<%- product.name %>r" class="detail-img">
             </div>
             <div class="detalles">
                 <div class="descripcion-boton">
@@ -21,7 +21,7 @@
                 </div>
                 <div class="marca-precio">
                     <h4>Marca: X</h4>
-                    <h4>Precio: $5,432</h4>
+                    <h4>Precio: $<%- product.price %></h4> 
                 </div>
                 <div class="parr-descripcion">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem, repellat placeat. Vel nesciunt atque aliquam, dicta facilis cupiditate quas soluta quaerat quia placeat neque incidunt qui dolorum veritatis. Culpa, aliquid!
