@@ -22,7 +22,7 @@
         "image": "Martin000jr-10",
         "category": "Guitarras",
         "color": [
-            "Satin"
+            "Madera natural"
         ]
     },
     {
@@ -315,7 +315,7 @@
     {
         "id": 25,
         "name": "Cable de Instrumento de plug a plug",
-        "brand": "Adam Hall ",
+        "brand": "Adam Hall",
         "price": 225,
         "discount": 5,
         "description": "Cable de instrumento con tapones TRS de Adam Hall - probada desde 1980, robusto, y asequible. Este cable garantiza protección óptima contra el ruido de fondo con blindaje en espiral y un blindaje adicional. Equipado con conectores desequilibrados rectos.",
@@ -350,7 +350,7 @@
     {
         "id": 28,
         "name": "Boquilla Para Trompeta 5I1",
-        "brand": "Emo Parduba ",
+        "brand": "Emo Parduba",
         "price": 734,
         "discount": 25,
         "description": "El diseño patentado inusual de la boquilla Doble Taza permite una gran facilidad de tocar en el registro alto.",
@@ -505,7 +505,7 @@
     {
         "id": 40,
         "name": "HI-BB-SB",
-        "brand": "Hofner ",
+        "brand": "Hofner",
         "price": 13400,
         "discount": 5,
         "description": "Hofner ha creado una replica del bajo de Paul McCartney Violín Bass Vintage 62, históricamente bastante exacta para satisfacer incluso al fan más exigente de los Beatles.  ",

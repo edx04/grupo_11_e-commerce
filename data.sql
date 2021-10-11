@@ -7,7 +7,6 @@ insert into brands (name) values ('Gibson');
 insert into brands (name) values ('Eastwood');
 insert into brands (name) values ('Otra');
 
-
 insert into colors (name) values ('Rojo');
 insert into colors (name) values ('Azul');
 insert into colors (name) values ('Verde');
