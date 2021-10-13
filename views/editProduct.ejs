@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include ('./partials/head',{styles: 'static/css/editProduct.css', titulo:'Edición de producto'})%>
+<script src="/static/js/validacionesEditProduct.js"></script>
 <body>
 <%- include('./partials/header') %>
     <main class="main-edit">
@@ -9,18 +10,18 @@
         </div>
 
         <div class="form-edit">
-            <form class="form-editProduct">
+            <form class="form-editProduct" action="/" method="">
                 <div class="div-formEdit">
                     <div>
                         <label for="producto" class="italics">Nombre del producto</label>
                     </div>                    
-                    <input type="text" placeholder="Nombre" name="producto" required>
+                    <input type="text" placeholder="Nombre" name="producto" id="nombre" required>
                 </div>
     
                 <div class="div-formEdit">
                     <label for="descripcion" class="italics">Descripción</label>
                     <br>
-                    <textarea name="descripcion" id="descripcion" cols="30" rows="3"></textarea>
+                    <textarea name="descripcion" id="descripcion" cols="30" rows="3" required></textarea>
                 </div>
     
                 <div class="div-formEdit">
@@ -75,7 +76,7 @@
                 <div class="div-formEdit">
                     <label for="precio" class="italics">Precio</label>
                     <br>
-                    <input type="number" placeholder="0.00" name="precio" min="0" step="0.01" required>
+                    <input type="number" placeholder="0.00" name="precio" id="precio" min="0" step="0.01" required>
                 </div>
 
                 <div class="botones-edit">
