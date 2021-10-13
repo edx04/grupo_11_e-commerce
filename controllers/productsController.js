@@ -55,6 +55,8 @@ const controller = {
             db.Products.create({
                 name:req.body.producto,
                 price: req.body.precio,
+                discount: req.body.descuento,
+                stock: req.body.stock,
                 description:req.body.descripcion,
                 image: req.body.perfil,
                 id_color: req.body.colorId,

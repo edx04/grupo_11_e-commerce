@@ -30,6 +30,7 @@ CREATE TABLE `products` (
   `name` text NOT NULL,
   `price` float(10) NOT NULL,
   `discount` int(11) NOT NULL DEFAULT 0,
+  `stock` int(11) NOT NULL DEFAULT 0,
   `description` text NOT NULL,
   `image` varchar(255) NOT NULL DEFAULT 'default.jpg',
   `id_color` int(11) ,

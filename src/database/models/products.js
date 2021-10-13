@@ -14,6 +14,9 @@ module.exports = (sequelize, dataTypes) => {
         discount: {
             type: dataTypes.INTEGER
         },
+        stock: {
+            type: dataTypes.INTEGER
+        },
         description: {
             type: dataTypes.STRING
         },
@@ -37,11 +40,11 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     })
 
-    Product.associate = function(models) {
+    Product.associate = function (models) {
         Product.belongsTo(models.Colors, {
-                as: "color",
-                foreignKey: "id_color"
-            }),
+            as: "color",
+            foreignKey: "id_color"
+        }),
             Product.belongsTo(models.Categories, {
                 as: "category",
                 foreignKey: "id_categories"

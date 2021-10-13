@@ -30,6 +30,7 @@ const productRouter = require('./routers/productDetail');
 const registerRouter = require('./routers/register')
 const editRouter = require('./routers/editProduct');
 const productsRouter = require('./routers/products');
+const perfilRouter = require('./routers/perfil');
 
 app.use('/', mainRouter);
 app.use('/login', loginRouter);
@@ -37,7 +38,8 @@ app.use('/productCart', cartRouter);
 app.use('/productDetail', productRouter);
 app.use('/register', registerRouter);
 app.use('/editProduct', editRouter);
-app.use('/products', productsRouter)
+app.use('/products', productsRouter);
+app.use('/perfil', perfilRouter);
 
 app.listen(3000, () => {
     console.log('Servidor funcionando');
