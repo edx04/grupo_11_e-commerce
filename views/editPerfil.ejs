@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %>
+    <body>
+        <%- include('./partials/header') %>
+            <main>
+                <div class="full">
+                    <div class="perfil">
+                        <h1>Editar Perfil</h1><br>
+                        <form action="/perfil/edit" method="post">
+                            <img id="perfil" src="/static/images/users/<%= imagen %> " alt="imagen de usuario" />
+                            <h3>Cambiar foto de perfil</h3>
+                            <label for="image" class="custom-file-upload">Subir nueva foto
+                                <input type="file" name="image" id="image" />
+                            </label><br>
+                            <h3>Informacion personal</h3>
+                                <input type="text" name="name" placeholder="Nombre" id="nombre"
+                                value= "<%= nombre %>">
+                                <input type="email" placeholder="Email" name="email" id="email"
+                                value= "<%= correo %>">
+                            <button type="submit">Actualizar</button>
+                        </form>
+                            <button class="cerrar" onclick="location.href='/perfil'">Cancelar</button>
+                    </div>
+                </div>
+            </main>
+            <%- include('./partials/footer') %>
+    </body>
+
+</html>

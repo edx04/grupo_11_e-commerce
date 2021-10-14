@@ -7012,5 +7012,19 @@
   "email": "prueba@gmail.com",
   "password": "$2a$10$Ic52qvnNa8P8vTCucNGHxe2HsTzp8YrrZXU2cH0VKhJSqquuJ/uT6",
   "image": "default.png"
+ },
+ {
+  "id": 1003,
+  "name": "Damaris",
+  "email": "damis@gmail.com",
+  "password": "$2a$10$jUH4VtgtylirkEvDX6tP3Or3rky86TeNizCDetNmDdaDMsNwXVRzW",
+  "image": "image-1634138912644.jpg"
+ },
+ {
+  "id": 1004,
+  "name": "Miguel Mora",
+  "email": "miguelmora@hotmail.com",
+  "password": "$2a$10$Dnh3Xi9Nrky2THG6SfQtsOTC2uIj620vntl2E1oRaAWk1zz4PTBVG",
+  "image": "image-1634225025390.jpeg"
  }
 ]

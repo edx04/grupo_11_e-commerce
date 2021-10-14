@@ -28,10 +28,10 @@
                     <% if (locals.errors && errors.passwordConfirm) { %>
                         <p class="error"><%= errors.passwordConfirm.msg %>  </p>
                     <% } %>
-                    <div>
-                        <label for="image" class="form-label">Imagen del perfil</label><br>
-						<input type="file" name="image" id="image">
-                    </div>
+                    <h3>Imagen de perfil</h3>
+                        <label for="image" class="custom-file-upload">Subir imagen
+						    <input type="file" name="image" id="image"/>
+                        </label><br>
                     <button type="submit">Registrar</button>
                 </form>
                 <a href="/login">¿Ya tienes cuenta?</a>

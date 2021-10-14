@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('./partials/head') %>
-<body>
-<%- include('./partials/header') %>
-    <main >
-       
-        
+  <%- include('./partials/head') %>
+  <body>
+    <%- include('./partials/header') %>
+    <main>
+      <div class="full">
+        <div class="perfil">
+          <h1>Hola <%= nombre %> </h1>
+            <img id="perfil" src="/static/images/users/<%= imagen %> " alt="imagen de usuario"/>
+          </div>
+          <div>
+            <button onclick="location.href='/perfil/editar'">Editar perfil</button>
+            <button onclick="location.href='/pedidos'">Pedidos</button>
+            <button class="cerrar" onclick="location.href='/editPerfil'">Cerrar sesion</button>
+          </div>
+      </div>
     </main>
     <%- include('./partials/footer') %>
-    </body>
+  </body>
 </html>
