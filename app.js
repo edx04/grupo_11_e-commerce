@@ -27,7 +27,8 @@ const mainRouter = require('./routers/index');
 const cartRouter = require('./routers/cart');
 const loginRouter = require('./routers/login');
 const productRouter = require('./routers/productDetail');
-const registerRouter = require('./routers/register')
+const registerRouter = require('./routers/register');
+const createRouter = require('./routers/createProduct');
 const editRouter = require('./routers/editProduct');
 const productsRouter = require('./routers/products');
 const perfilRouter = require('./routers/perfil');
@@ -37,6 +38,7 @@ app.use('/login', loginRouter);
 app.use('/productCart', cartRouter);
 app.use('/productDetail', productRouter);
 app.use('/register', registerRouter);
+app.use('/createProduct', createRouter);
 app.use('/editProduct', editRouter);
 app.use('/products', productsRouter);
 app.use('/perfil', perfilRouter);
