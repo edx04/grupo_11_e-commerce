@@ -10,31 +10,16 @@
             </div>
         </section>
         <section>
-            <h3>Artículos más vendidos</h3>
+            <h3>Artículos con descuento</h3>
             <div class="contenedor-articulos">
-                <article><img src="static/images/mas-vendido-1.jpg" alt="Guitarra Fender" class="img-articulo">
+                <% for (let n=0;n<=3;n++) { %>
+                <article><img src="static/images/products/<%= products[n].image %>" alt=<%= products[n].name %> class="img-articulo">
                     <div class="articulo">
-                        <h5 class="descripcion">Fender Stratocaster Negra</h5>
+                        <h5 class="descripcion"><%= products[n].name %></h5>
+                        <!-- <a href="/productDetail.ejs">Ver detalles</a> -->
                     </div>
                 </article>
-
-                <article><img src="static/images/mas-vendido-2.jpg" alt="Bajo Yamaha Rojo 4 Cuerdas" class="img-articulo">
-                    <div class="articulo">
-                        <h5 class="descripcion">Bajo Yamaha Rojo 4 cuerdas</h5>
-                    </div>
-                </article>
-
-                <article><img src="static/images/mas-vendido-3.jpg" alt="Amplificador Line 6" class="img-articulo">
-                    <div class="articulo">
-                        <h5 class="descripcion">Amplificador Line 6</h5>
-                    </div>
-                </article>
-                
-                <article><img src="static/images/mas-vendido-4.jpg" alt="Cuerdas para guitarra Classic" class="img-articulo">
-                    <div class="articulo">
-                        <h5 class="descripcion">Cuerdas para guitarra Classic</h5>
-                    </div>
-                </article>
+                <% } %>
             </div>
         </section>
     </main>
