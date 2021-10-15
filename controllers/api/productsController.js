@@ -35,10 +35,10 @@ const productsController = {
                 res.json({
                     meta: {
                         status: 200,
-                        total: product.length,
-                        url: `api/detail/genre/${req.params.id}`
+                        total: 1,
+                        url: `api/products/${req.params.id}`
                     },
-                    data: genre
+                    data: product
                 });
             });
     }

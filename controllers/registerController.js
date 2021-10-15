@@ -41,9 +41,7 @@ const controller = {
             }).then(user => {
                 console.log(user)
             })
-
-
-
+            
             res.redirect("/login");
         }
     },
