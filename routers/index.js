@@ -1,11 +1,8 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const indexController = require('../controllers/indexController');
 
-router.get('/', (req, res) => {
-    res.render('index',{
-        styles: '/static/css/index.css',
-        titulo: 'Bienvenidos'
-    });
-});
+router.get('/',indexController.listDiscountProducts);
+
 
 module.exports = router;
