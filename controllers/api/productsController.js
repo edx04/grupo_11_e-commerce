@@ -12,10 +12,9 @@ const productsController = {
                 products.forEach((product,index) => {
                     let name = product.category.name
                     counts[name] = counts[name] ? counts[name] + 1:1;
-                    products[index].url = req.headers.host + `/products/${product.id}`
+                    products[index].dataValues.url = req.headers.host + `/products/${product.id}`
                   
                 });
-                console.log(products[0])
                 res.json({
                     meta: {
                         status: 200,
