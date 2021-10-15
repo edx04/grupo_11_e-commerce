@@ -14,10 +14,13 @@
             <div class="contenedor-articulos">
                 <% for (let n=0;n<=3;n++) { %>
                 <article><img src="static/images/products/<%= products[n].image %>" alt=<%= products[n].name %> class="img-articulo">
-                    <div class="articulo">
-                        <h5 class="descripcion"><%= products[n].name %></h5>
-                        <!-- <a href="/productDetail.ejs">Ver detalles</a> -->
-                    </div>
+                    <a href="products/<%= products[n].id %>">
+                        <div class="articulo">
+                            <h5 class="descripcion"><%= products[n].name %></h5>
+                            <h5 class="descripcion"><%= products[n].discount %>%</h5>
+                            <!-- <a href="/productDetail.ejs">Ver detalles</a> -->
+                        </div>
+                    </a>
                 </article>
                 <% } %>
             </div>
