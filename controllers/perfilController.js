@@ -1,13 +1,9 @@
 const fs = require('fs').promises
 const db = require("../src/database/models");
-const multer = require("multer");
-const path = require("path");
-
 
 const controller = {
     index: (req, res) => {
         usuario = req.session.login;
-        console.log(usuario)
         res.render("perfil", {
             styles: '/static/css/perfil.css',
             titulo: 'perfil',
@@ -23,23 +19,22 @@ const controller = {
             titulo: 'Editar perfil',
             imagen: usuario.image,
             nombre: usuario.name,
-            correo: usuario.email
+            correo: usuario.email,
         });
     },
 
     update: (req, res) => {
         usuario = req.session.login;
+        try {
+            req.body.image = req.file.filename;
+            eliminarImagen(usuario.image);
+        } catch (error) {
+            req.body.image = usuario.image
+        }
         formulario = req.body;
 
-        if(formulario.image === ''){
-            imagen = usuario.image;
-        }else{
-            imagen = formulario.image;
-            eliminarImagen(usuario.image);
-        }
-
         db.Users.update({
-            image: imagen,
+            image: formulario.image,
             name: formulario.name,
             email: formulario.email   
             
@@ -49,8 +44,12 @@ const controller = {
 
         req.session.login.name = formulario.name;
         req.session.login.email = formulario.email;
-        req.session.login.image = imagen;
+        req.session.login.image = formulario.image;
         res.redirect("/perfil");
+    },
+
+    orders: (req, res) => {
+
     }
     
 }
@@ -58,7 +57,7 @@ const controller = {
 function eliminarImagen(imagen) {
     fs.unlink("./public/images/users/"+imagen)
         .then(() => {
-            console.log("imagen eliminado")
+            console.log("imagen eliminada")
         }).catch(err => {
             console.error(err)
         })
