@@ -19,11 +19,11 @@
                         <% products.forEach((product) => { %>
                             <article>
                                 <a href="products/<%= product.id %>">
-                                <img src="/static/images/products/<%- product.image %>" alt="<%- product.name %>" class="img-articulo">
-                                <div class="articulo">
-                                    <h3 class="descripcion"><%- product.name %></h3>
-                                    <h5 class="descripcion">$ <%= product.price %></h5>
-                                </div>
+                                    <img src="/static/images/products/<%- product.image %>" alt="<%- product.name %>" class="img-articulo">
+                                    <div class="articulo">
+                                        <h4 class="descripcion"><%- product.name %></h4>
+                                        <h5 class="descripcion">$ <%= product.price %></h5>
+                                    </div>   
                                 </a>
                             </article>
 
