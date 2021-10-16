@@ -14,6 +14,7 @@ article{
     margin:10px 0px;
     padding: 5px;
     position: relative;
+    height: 20rem;
 }
 
 article .descripcion{
@@ -33,7 +34,7 @@ img{
 .img-articulo{
     filter: gray; 
       -webkit-filter: grayscale(1); 
-       
+    height: 70%;   
 }
 
 /*Media queries*/
