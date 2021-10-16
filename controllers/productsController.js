@@ -10,10 +10,17 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 const controller = {
     /*** Listado de productos ***/
     index: (req, res) => {
-        res.render("products", {
-            styles: '/static/css/index.css',
-            titulo: 'Products'
-        });
+        db.Products.findAll({
+            include: [{ association: "color" }, { association: "brand" }, { association: "category" }]
+        }).then(productos => {
+            console.log(productos[0])
+            res.render("products", {
+                styles: '/static/css/index.css',
+                titulo: 'Products',
+                products: productos
+            });
+        })
+       
     },
 
     /*** Formulario de creacion de productos ***/
@@ -31,9 +38,10 @@ const controller = {
         db.Products.findByPk(req.params.id,{
             include: [{ association: "color" }, { association: "brand" }, { association: "category" }]
         }).then(user => {
-            console.log(user.color.name)
-            product = user
-            res.render("productDetail", { product: product });
+           
+            res.render("productDetail", { product: user });
+        }).catch(e =>{
+            console.log(e)
         })
 
        
