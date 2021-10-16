@@ -16,29 +16,18 @@
                 <section>
                     <h3>Todos los productos </h3>
                     <div class="contenedor-articulos">
-                        <article><img src="/static/images/mas-vendido-1.jpg" alt="Guitarra Fender" class="img-articulo">
-                            <div class="articulo">
-                                <h5 class="descripcion">Fender Stratocaster Negra</h5>
-                            </div>
-                        </article>
+                        <% products.forEach((product) => { %>
+                            <article><img src="/static/images/products/<%- product.image %>" alt= <%- product.name %> class="img-articulo">
+                                <div class="articulo">
+                                    <h5 class="descripcion"><%- product.name %></h5>
+                                </div>
+                            </article>
 
-                        <article><img src="/static/images/mas-vendido-2.jpg" alt="Bajo Yamaha Rojo 4 Cuerdas" class="img-articulo">
-                            <div class="articulo">
-                                <h5 class="descripcion">Bajo Yamaha Rojo 4 cuerdas</h5>
-                            </div>
-                        </article>
+                        <% }) %>
+                       
 
-                        <article><img src="/static/images/mas-vendido-3.jpg" alt="Amplificador Line 6" class="img-articulo">
-                            <div class="articulo">
-                                <h5 class="descripcion">Amplificador Line 6</h5>
-                            </div>
-                        </article>
-
-                        <article><img src="static/images/mas-vendido-4.jpg" alt="Cuerdas para guitarra Classic" class="img-articulo">
-                            <div class="articulo">
-                                <h5 class="descripcion">Cuerdas para guitarra Classic</h5>
-                            </div>
-                        </article>
+                      
+                        
                     </div>
                 </section>
 
