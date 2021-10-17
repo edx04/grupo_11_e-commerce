@@ -15,13 +15,15 @@
                     <div>
                         <label for="producto" class="italics">Nombre del producto</label>
                     </div>                    
-                    <input type="text" placeholder="Nombre" name="producto" id="nombre" required>
+                    <input type="text" placeholder="Nombre" name="producto" id="nombre" value="<%- product.name %>" required>
                 </div>
     
                 <div class="div-formEdit">
                     <label for="descripcion" class="italics">Descripción</label>
                     <br>
-                    <textarea name="descripcion" id="descripcion" cols="30" rows="3" required></textarea>
+                    <textarea name="descripcion" id="descripcion" cols="30" rows="3" required>
+                        <%- product.description %>
+                    </textarea>
                 </div>
     
                 <div class="div-formEdit">

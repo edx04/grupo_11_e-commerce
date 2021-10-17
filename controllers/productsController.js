@@ -79,14 +79,37 @@ const controller = {
 
     /*** Formulario de edición de productos ***/
     edit: (req, res) => {
-        let idProducto = req.params.id - 1;
-        res.render("editProduct", { productToEdit: products[idProducto] });
+        
+        db.Products.findByPk(req.params.id,{
+            include: [{ association: "color" }, { association: "brand" }, { association: "category" }]
+        }).then(product => {
+            res.render("editProduct", { product: product  });
+        }).catch(e =>{
+            console.log(e)
+        })
+
+
+        
     },
 
     /*** Acción de edición (a donde se envía el formulario) ***/
     update: (req, res) => {
         //Actualizamos en la base de datos
-        res.send("Producto actualizado")
+        db.Products.update({
+            name:req.body.producto,
+            price: req.body.precio,
+            discount: req.body.descuento,
+            stock: req.body.stock,
+            description:req.body.descripcion,
+            image: req.body.perfil,
+            id_color: req.body.colorId,
+            id_categories : req.body.categoria
+
+        },
+        { where:{
+            id: req.params.id
+        }})
+        res.redirect("/products/"+req.params.id)
     },
 
     /*** Acción de borrado ***/
