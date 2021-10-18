@@ -25,21 +25,35 @@ const controller = {
 
     /*** Formulario de creacion de productos ***/
     create: (req, res) => {
-        res.render("createProduct", {
-            styles: '/static/css/editProduct.css',
-            titulo: 'createProduct'
-        });
+        db.Brands.findAll()
+        .then(brands => {
+            console.log(brands)
+
+            res.render("createProduct", {
+                styles: '/static/css/editProduct.css',
+                titulo: 'createProduct',
+                brands: brands
+            });
+        })
+
+
+
+
+        
     },
 
     /*** Detalle de un producto en particular ***/
     detail: (req, res) => {
-        let product
-        let idProducto = req.params.id -1;
-        db.Products.findByPk(req.params.id,{
+        db.Products.findByPk(req.params.id ,{
             include: [{ association: "color" }, { association: "brand" }, { association: "category" }]
-        }).then(user => {
-           
-            res.render("productDetail", { product: user });
+        }).then(product => {
+            console.log(product)
+           if (product){
+            res.render("productDetail", { product });
+           }else{
+               res.redirect("/products")
+           }
+            
         }).catch(e =>{
             console.log(e)
         })
@@ -52,7 +66,7 @@ const controller = {
     /*** Acción de creación (a donde se envía el formulario) ***/
     store: (req, res) => {
         //Agregamos a la base de datos
-        console.log(req.body)
+        console.log(req.body.marca)
         db.Colors.findOne({
             where: {
                 name: req.body.color
@@ -68,7 +82,8 @@ const controller = {
                 description:req.body.descripcion,
                 image: req.body.perfil,
                 id_color: req.body.colorId,
-                id_categories : req.body.categoria
+                id_categories : req.body.categoria,
+                id_brand : req.body.marca
             })
             
             })
@@ -79,14 +94,30 @@ const controller = {
 
     /*** Formulario de edición de productos ***/
     edit: (req, res) => {
+
+
+
+        db.Brands.findAll()
+        .then(brands => {
+            console.log(brands)
+            db.Products.findByPk(req.params.id,{
+                include: [{ association: "color" }, { association: "brand" }, { association: "category" }]
+            }).then(product => {
+                if (product){
+                    res.render("editProduct", { product: product,brands  });
+                } else{
+                    res.redirect('/products/create')
+                }
+                
+            }).catch(e =>{
+                console.log(e)
+            })
+    
+
+         
+            });
+     
         
-        db.Products.findByPk(req.params.id,{
-            include: [{ association: "color" }, { association: "brand" }, { association: "category" }]
-        }).then(product => {
-            res.render("editProduct", { product: product  });
-        }).catch(e =>{
-            console.log(e)
-        })
 
 
         
@@ -95,21 +126,38 @@ const controller = {
     /*** Acción de edición (a donde se envía el formulario) ***/
     update: (req, res) => {
         //Actualizamos en la base de datos
-        db.Products.update({
-            name:req.body.producto,
-            price: req.body.precio,
-            discount: req.body.descuento,
-            stock: req.body.stock,
-            description:req.body.descripcion,
-            image: req.body.perfil,
-            id_color: req.body.colorId,
-            id_categories : req.body.categoria
+      
+        db.Colors.findOne({
+            where: {
+                name: req.body.color
+            }
+        }).then(color => {
+            req.body.colorId = color.id
+            db.Products.update({
+                name:req.body.producto,
+                price: req.body.precio,
+                discount: req.body.descuento,
+                stock: req.body.stock,
+                description:req.body.descripcion,
+                image: req.body.perfil,
+                id_color: req.body.colorId,
+                id_categories : req.body.categoria,
+                id_brand : req.body.marca
+    
+            },
+            { where:{
+                id: req.params.id
+            }})
 
-        },
-        { where:{
-            id: req.params.id
-        }})
-        res.redirect("/products/"+req.params.id)
+
+            res.redirect("/products/10")
+
+
+        }).catch(e =>{
+            console.log(e)
+        })
+        
+        
     },
 
     /*** Acción de borrado ***/

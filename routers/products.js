@@ -21,7 +21,7 @@ router.post('/create', productsController.store);
 router.get('/:id/edit', productsController.edit); 
 
 /*** Acción de edición (a donde se envía el formulario) ***/ 
-router.put('/:id', productsController.update); 
+router.post('/:id', productsController.update); 
 
 /*** Acción de borrado ***/ 
 router.delete('/:id', productsController.destroy); 

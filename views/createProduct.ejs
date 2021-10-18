@@ -44,6 +44,20 @@
                     </select>
                         </div>
 
+                        <div class="div-formEdit">
+                            <label for="marca" class="italics">Marca</label>
+                            <br>
+                            <select name="marca" id="marca">
+                                <% brands.forEach((brand) => { %>
+                                    <option value="<%- brand.id %>"><%- brand.name %></option>
+                                <% }) %>
+                            </select>
+                        </div>
+        
+
+
+
+
                         <div class="colores">
                             <p class="italics">Colores</p>
                             <div class="check-colores">

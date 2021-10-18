@@ -10,7 +10,7 @@
         </div>
 
         <div class="form-edit">
-            <form class="form-editProduct" action="/products/<%- product.id %>" method="PUT">
+            <form class="form-editProduct" action="/products/<%- product.id %>" method="POST">
                 <div class="div-formEdit">
                     <div>
                         <label for="producto" class="italics">Nombre del producto</label>
@@ -44,33 +44,47 @@
                         <option value="6">Accesorios</option>
                     </select>
                 </div>
+
+                
+                <div class="div-formEdit">
+                    <label for="marca" class="italics">Marca</label>
+                    <br>
+                    <select name="marca" id="marca">
+                        <% brands.forEach((brand) => { %>
+                            <option value="<%- brand.id %>"><%- brand.name %></option>
+                        <% }) %>
+                    </select>
+                </div>
+
+
+
                 
                 <div class="colores">
                     <p class="italics">Colores</p>
                     <div class="check-colores">
                         <div>
                             <label for="rojo">Rojo</label>
-                            <input type="checkbox" name="rojo" value="rojo" id="rojo">
+                            <input type="checkbox" name="color" value="rojo" id="rojo">
                         </div>
                         <div>
                             <label for="azul">Azul</label>
-                            <input type="checkbox" name="azul" value="azul" id="azul">
+                            <input type="checkbox" name="color" value="azul" id="azul">
                         </div>
                         <div>
                             <label for="verde">Verde</label>
-                            <input type="checkbox" name="verde" value="verde" id="verde">
+                            <input type="checkbox" name="color" value="verde" id="verde">
                         </div>
                         <div>
                             <label for="blanco">Blanco</label>
-                            <input type="checkbox" name="blanco" value="blanco" id="blanco">
+                            <input type="checkbox" name="color" value="blanco" id="blanco">
                         </div>
                         <div>
                             <label for="negro">Negro</label>
-                            <input type="checkbox" name="negro" value="negro" id="negro">
+                            <input type="checkbox" name="color" value="negro" id="negro">
                         </div>
                         <div>
                             <label for="otro">Otro</label>
-                            <input type="checkbox" name="otro" value="otro" id="otro">
+                            <input type="checkbox" name="color" value="otro" id="otro">
                         </div>
                     </div>
                 </div>
