@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include ('./partials/head',{styles: 'static/css/editProduct.css', titulo:'Edición de producto'})%>
+<%- include ('./partials/head',{styles: '/static/css/editProduct.css', titulo:'Edición de producto'})%>
 <script src="/static/js/validacionesEditProduct.js"></script>
 <body>
 <%- include('./partials/header') %>
@@ -10,7 +10,7 @@
         </div>
 
         <div class="form-edit">
-            <form class="form-editProduct" action="/" method="">
+            <form class="form-editProduct" action="/products/<%- product.id %>" method="PUT">
                 <div class="div-formEdit">
                     <div>
                         <label for="producto" class="italics">Nombre del producto</label>
