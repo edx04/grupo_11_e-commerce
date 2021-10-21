@@ -163,7 +163,14 @@ const controller = {
     /*** Acción de borrado ***/
     destroy: (req, res) => {
         //Eliminamos de la base de datos
-        res.send("Producto eliminado");
+        db.Products.destroy({
+            where:{
+                id: req.params.id
+            }
+        })
+
+
+        res.redirect("/products");
     }
 };
 
