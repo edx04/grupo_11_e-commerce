@@ -7,7 +7,7 @@ const usersController={
             res.json({
                 meta: {
                     count: users.length,
-                    url: 'api/users'
+                    url: 'http://localhost:3000/api/users/'
                 },
                 users: users
             })
@@ -21,9 +21,15 @@ const usersController={
         .then(user=>{
             res.json({
                 meta: {
-                    url: `api/users/${req.params.id}`
+                    url: `http://localhost:3000/api/users/${req.params.id}`,
+                    
                 },
-                user: user
+                user: {
+                    id:user.id,
+                    name:user.name,
+                    email:user.email,
+                    image:`http://localhost:3000/static/images/users/${user.image}`
+                }
             })
             .catch(e =>{
                 console.log(e)
