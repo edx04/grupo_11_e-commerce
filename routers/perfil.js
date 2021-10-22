@@ -24,8 +24,10 @@ router.get('/', invitadosMiddleware ,perfilController.index);
 
 router.get('/editar', invitadosMiddleware ,perfilController.edit);
 
+router.get('/pedidos', invitadosMiddleware ,perfilController.orders);
+
 router.post('/editar', upload.single("image"), invitadosMiddleware ,perfilController.update);
 
-router.get('/pedidos', invitadosMiddleware ,perfilController.orders);
+router.post('/cerrar', perfilController.logout)
 
 module.exports = router;

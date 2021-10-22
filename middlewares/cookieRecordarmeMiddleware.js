@@ -1,14 +1,14 @@
-const userModel = require("../models/user");
+const db = require("../src/database/models");
 
 function cookieRecordarme (req, res, next){
     if (req.cookies.recordarme != undefined && req.session.login == undefined){
-        let usuarios = userModel.getData()
-        for (let user of usuarios) {
-            if (user.id == req.cookies.recordarme){
-                req.session.login = user;
-                break;
+        db.Users.findOne({
+            where: {
+                id: req.cookies.recordarme
             }
-        }
+        }).then(user => {
+            req.session.login = user;
+        })
     }
     next();
 }

@@ -50,6 +50,15 @@ const controller = {
 
     orders: (req, res) => {
         console.log("estamos en la orders");
+    },
+
+    logout: (req,res) =>{
+        req.session.login = null;
+        res.cookie("recordarme", null, {
+            maxAge: 0,
+        })
+        console.log("logout")
+        res.redirect("/")
     }
     
 }

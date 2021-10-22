@@ -12,7 +12,10 @@
           <div>
             <button onclick="location.href='/perfil/editar'">Editar perfil</button>
             <button onclick="location.href='/perfil/pedidos'">Pedidos</button>
-            <button class="cerrar" onclick="location.href='/editPerfil'">Cerrar sesion</button>
+            <form action='/perfil/cerrar' method="post">
+              <button class="cerrar">Cerrar sesion</button>
+            </form>
+           
           </div>
       </div>
     </main>
