@@ -8,8 +8,10 @@ class SecondRow extends Component{
     constructor(){
 		super();
 		this.state={
-            nombre: 'Nombre',
+            nombreProd: 'Nombre',
             descripcion: 'Descripción',
+            nombreUser: 'Usuario',
+            email: 'Email',
             c1:0,
             c2:0,
             c3:0,
@@ -23,8 +25,10 @@ class SecondRow extends Component{
 
     componentDidMount(){
         this.obtenerPropsLastProduct();
+        this.obtenerPropsLastUser();
         this.obtenerPropsCategorias();
         this.obtenerListaProductos();
+
     }
 
     obtenerPropsLastProduct(){
@@ -34,12 +38,24 @@ class SecondRow extends Component{
                 var lastProd=data.products[data.products.length-1]
 
                 this.setState({
-                    nombre: lastProd.name,
+                    nombreProd: lastProd.name,
                     descripcion: lastProd.description
                 })
-            }
-                
-            )
+            })
+            .catch(error=> console.log(error))
+    }
+
+    obtenerPropsLastUser(){
+        fetch('/api/users/')
+            .then(res => res.json())
+            .then(data => {
+                var lastUser=data.users[data.users.length-1]
+
+                this.setState({
+                    nombreUser: lastUser.name,
+                    email: lastUser.email
+                })
+            })
             .catch(error=> console.log(error))
     }
 
@@ -64,22 +80,33 @@ class SecondRow extends Component{
     obtenerListaProductos(){
         fetch('/api/products/')
             .then(res => res.json())
-            .then(data => 
-                console.log(data.products.name)
-                /*this.setState({
-                    productsList: data.products.name
-                })*/
-            )
+            .then(data => {
+                let arr=[];
+                for(let i=0;i<=data.products.length-1;i++){
+                    arr.push({'name':data.products[i].name});
+                }
+
+                this.setState({
+                    productsList: arr
+                })          
+            })
     }
 
     render(){
         return(
             <React.Fragment>
                 <div className="row">
-                    <Card titulo="Ultimo producto creado">                       
+                    <Card titulo="Último producto creado">                       
                         <ProductInfo
-                            nombre={this.state.nombre}
+                            nombre={this.state.nombreProd}
                             descripcion={this.state.descripcion}
+                        />
+                    </Card>
+
+                    <Card titulo="Último usuario creado">                       
+                        <ProductInfo
+                            nombre={this.state.nombreUser}
+                            descripcion={this.state.email}
                         />
                     </Card>
 
@@ -116,17 +143,10 @@ class SecondRow extends Component{
                         </div>
                     </Card>
 
-                    <Card titulo="Lista de productos">
-                        
-                        <BulletPoint name="Producto 1"/>
-                        <BulletPoint name="Producto 2"/>
-                        <BulletPoint name="Producto 3"/>
-                        
-                        
-                        
-                        {/*{genres.map((genre,index)=>{
-                            return  <BulletPoint2  {...genre}  key={index} />
-                        })}*/}
+                    <Card titulo="Lista de productos">                                            
+                        {this.state.productsList.map((name,index)=>{
+                            return  <BulletPoint  {...name}  key={index} />
+                        })}
                     </Card>
                 </div>
             </React.Fragment>
