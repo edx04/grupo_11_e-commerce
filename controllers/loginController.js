@@ -59,14 +59,13 @@ const controller = {
                         })
                     }
                     res.redirect("/");
-                    next();
                 } else {
                     console.log(error)
                     res.render("login", {
                         errors: error,
                         oldData: req.body,
                         styles: '/static/css/styles-login-register.css',
-                        titulo: 'Inicia Sesion'
+                        titulo: 'Inicia sesión'
                     });
                 }
             })

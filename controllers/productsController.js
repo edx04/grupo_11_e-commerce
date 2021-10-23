@@ -20,47 +20,43 @@ const controller = {
                 products: productos
             });
         })
-       
+
     },
 
     /*** Formulario de creacion de productos ***/
     create: (req, res) => {
         db.Brands.findAll()
-        .then(brands => {
-            console.log(brands)
-
-            res.render("createProduct", {
-                styles: '/static/css/editProduct.css',
-                titulo: 'createProduct',
-                brands: brands
-            });
-        })
-
+            .then(brands => {
+                console.log(brands)
+                res.render("createProduct", {
+                    styles: '/static/css/editProduct.css',
+                    titulo: 'createProduct',
+                    brands: brands
+                });
+            })
 
 
-
-        
     },
 
     /*** Detalle de un producto en particular ***/
     detail: (req, res) => {
-        db.Products.findByPk(req.params.id ,{
+        db.Products.findByPk(req.params.id, {
             include: [{ association: "color" }, { association: "brand" }, { association: "category" }]
         }).then(product => {
             console.log(product)
-           if (product){
-            res.render("productDetail", { product });
-           }else{
-               res.redirect("/products")
-           }
-            
-        }).catch(e =>{
+            if (product) {
+                res.render("productDetail", { product });
+            } else {
+                res.redirect("/products")
+            }
+
+        }).catch(e => {
             console.log(e)
         })
 
-       
 
-        
+
+
     },
 
     /*** Acción de creación (a donde se envía el formulario) ***/
@@ -73,21 +69,21 @@ const controller = {
             }
         }).then(color => {
             console.log(color.id)
-            req.body.colorId= color.id
+            req.body.colorId = color.id
             db.Products.create({
-                name:req.body.producto,
+                name: req.body.producto,
                 price: req.body.precio,
                 discount: req.body.descuento,
                 stock: req.body.stock,
-                description:req.body.descripcion,
+                description: req.body.descripcion,
                 image: req.body.perfil,
                 id_color: req.body.colorId,
-                id_categories : req.body.categoria,
-                id_brand : req.body.marca
+                id_categories: req.body.categoria,
+                id_brand: req.body.marca
             })
-            
-            })
-            
+
+        })
+
 
         res.redirect("/products");
     },
@@ -98,35 +94,38 @@ const controller = {
 
 
         db.Brands.findAll()
-        .then(brands => {
-            console.log(brands)
-            db.Products.findByPk(req.params.id,{
-                include: [{ association: "color" }, { association: "brand" }, { association: "category" }]
-            }).then(product => {
-                if (product){
-                    res.render("editProduct", { product: product,brands  });
-                } else{
-                    res.redirect('/products/create')
-                }
-                
-            }).catch(e =>{
-                console.log(e)
-            })
-    
+            .then(brands => {
+                db.Products.findByPk(req.params.id, {
+                    include: [{ association: "color" }, { association: "brand" }, { association: "category" }]
+                }).then(product => {
+                    if (product) {
+                        db.Colors.findAll().then(colors => {
+                            console.log(colors)
+                            res.render("editProduct", { product: product, brands, colors});
+                        })
+                       
+                    } else {
+                        res.redirect('/products/create')
+                    }
 
-         
+                }).catch(e => {
+                    console.log(e)
+                })
+
+
+
             });
-     
-        
 
 
-        
+
+
+
     },
 
     /*** Acción de edición (a donde se envía el formulario) ***/
     update: (req, res) => {
         //Actualizamos en la base de datos
-      
+
         db.Colors.findOne({
             where: {
                 name: req.body.color
@@ -134,37 +133,39 @@ const controller = {
         }).then(color => {
             req.body.colorId = color.id
             db.Products.update({
-                name:req.body.producto,
+                name: req.body.producto,
                 price: req.body.precio,
                 discount: req.body.descuento,
                 stock: req.body.stock,
-                description:req.body.descripcion,
+                description: req.body.descripcion,
                 image: req.body.perfil,
                 id_color: req.body.colorId,
-                id_categories : req.body.categoria,
-                id_brand : req.body.marca
-    
+                id_categories: req.body.categoria,
+                id_brand: req.body.marca
+
             },
-            { where:{
-                id: req.params.id
-            }})
+                {
+                    where: {
+                        id: req.params.id
+                    }
+                })
 
 
             res.redirect("/products/10")
 
 
-        }).catch(e =>{
+        }).catch(e => {
             console.log(e)
         })
-        
-        
+
+
     },
 
     /*** Acción de borrado ***/
     destroy: (req, res) => {
         //Eliminamos de la base de datos
         db.Products.destroy({
-            where:{
+            where: {
                 id: req.params.id
             }
         })

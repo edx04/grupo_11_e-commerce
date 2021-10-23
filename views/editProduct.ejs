@@ -2,8 +2,9 @@
 <html lang="en">
 <%- include ('./partials/head',{styles: '/static/css/editProduct.css', titulo:'Edición de producto'})%>
 <script src="/static/js/validacionesEditProduct.js"></script>
+
 <body>
-<%- include('./partials/header') %>
+    <%- include('./partials/header') %>
     <main class="main-edit">
         <div class="titulo-edit">
             <h3>Editar producto</h3>
@@ -14,24 +15,25 @@
                 <div class="div-formEdit">
                     <div>
                         <label for="producto" class="italics">Nombre del producto</label>
-                    </div>                    
-                    <input type="text" placeholder="Nombre" name="producto" id="nombre" value="<%- product.name %>" required>
+                    </div>
+                    <input type="text" placeholder="Nombre" name="producto" id="nombre" value="<%- product.name %>"
+                        required>
                 </div>
-    
+
                 <div class="div-formEdit">
                     <label for="descripcion" class="italics">Descripción</label>
                     <br>
-                    <textarea name="descripcion" id="descripcion" cols="30" rows="3" required>
+                    <textarea name="descripcion" id="descripcion" cols="30" rows="3" required value=>
                         <%- product.description %>
                     </textarea>
                 </div>
-    
+
                 <div class="div-formEdit">
                     <label for="perfil" class="italics">Imagen</label>
                     <br>
                     <input type="file" id="foto" name="perfil" accept="image/*">
-                </div>    
-                
+                </div>
+
                 <div class="div-formEdit">
                     <label for="categoria" class="italics">Categoría</label>
                     <br>
@@ -45,50 +47,29 @@
                     </select>
                 </div>
 
-                
+
                 <div class="div-formEdit">
                     <label for="marca" class="italics">Marca</label>
                     <br>
                     <select name="marca" id="marca">
                         <% brands.forEach((brand) => { %>
-                            <option value="<%- brand.id %>"><%- brand.name %></option>
+                        <option value="<%- brand.id %>"><%- brand.name %></option>
                         <% }) %>
                     </select>
                 </div>
 
-
-
-                
-                <div class="colores">
+                <div class="div-formEdit">
                     <p class="italics">Colores</p>
                     <div class="check-colores">
-                        <div>
-                            <label for="rojo">Rojo</label>
-                            <input type="checkbox" name="color" value="rojo" id="rojo">
-                        </div>
-                        <div>
-                            <label for="azul">Azul</label>
-                            <input type="checkbox" name="color" value="azul" id="azul">
-                        </div>
-                        <div>
-                            <label for="verde">Verde</label>
-                            <input type="checkbox" name="color" value="verde" id="verde">
-                        </div>
-                        <div>
-                            <label for="blanco">Blanco</label>
-                            <input type="checkbox" name="color" value="blanco" id="blanco">
-                        </div>
-                        <div>
-                            <label for="negro">Negro</label>
-                            <input type="checkbox" name="color" value="negro" id="negro">
-                        </div>
-                        <div>
-                            <label for="otro">Otro</label>
-                            <input type="checkbox" name="color" value="otro" id="otro">
-                        </div>
+                        <select name="color" id="color">
+                        <% colors.forEach((color) => { %>
+                            <option value="<%- color.id %>"><%- color.name %></option>
+                        <% }) %>
+                        </select>
+
                     </div>
                 </div>
-                
+
                 <div class="div-formEdit">
                     <label for="precio" class="italics">Precio</label>
                     <br>
@@ -101,8 +82,9 @@
                 </div>
 
             </form>
-        </div>  
+        </div>
     </main>
-<%- include('./partials/footer') %>
+    <%- include('./partials/footer') %>
 </body>
+
 </html>
