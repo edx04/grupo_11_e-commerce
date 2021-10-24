@@ -53,6 +53,7 @@ CREATE TABLE `users`(
   `email` text NOT NULL,
   `password`text NOT NULL ,
   `image` varchar(100) NOT NULL DEFAULT 'default.jpg',
+  `admin` tinyint(1) DEFAULT 0,
   PRIMARY KEY (`id`)
 );
 
@@ -80,8 +81,3 @@ CREATE TABLE `orderProducts`(
   CONSTRAINT `orderproduct_order_id_foreign` FOREIGN KEY (`id_order`) REFERENCES `orders` (`id`),
   CONSTRAINT `orderproduct_product_id_foreign` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`)
 );
-
-
-
-
-

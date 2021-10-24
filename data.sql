@@ -58,12 +58,14 @@ insert into categories (name) values ('Bajos');
 insert into categories (name) values ('Otros instrumentos');
 
 
-insert into users (name, email, password, image) values ('Rowan Alston', 'ralston0@printfriendly.com', '$2a$10$pL.6gkvKVZoUpYjv3.8M9OHtn1OSL8drMu6adCTD/W1vV4Davoou2', 'default.png');
-insert into users (name, email, password, image) values ('Dominik Bletso', 'dbletso1@google.com.br', '$2a$10$E21aTmB6nVUJ0UrXsN7GJOYvF/sKq.vksr.snySh3LzSsfpWaTK6S', 'default.png');
-insert into users (name, email, password, image) values ('Fulvia Winmill', 'fwinmill2@europa.eu', '$2a$10$AQA5MU6jsqGq1FDBsvR/KuPqfV3M5vFn2QASbA9HtC.jgb/hhz2vi','default.png' );
-insert into users (name, email, password, image) values ('Kelby Woliter', 'kwoliter3@bloglovin.com', '$2a$10$puzd1nPR0i2Xu0TwtyRT5unXvh8e9ip/hM.7xZYW2VA0HieeTnYm.', 'default.png');
-insert into users (name, email, password, image) values ('Vincent Thurbon', 'vthurbon4@flavors.me', '$2a$10$zTiJHG5knpMSeMdWXqlImeKjVdKBna5dBYcmRaiJEvsAS1j/1aCyW', 'default.png');
-
+insert into users (name, email, password, admin, image) values ('Rowan Alston', 'ralston0@printfriendly.com', '$2a$10$pL.6gkvKVZoUpYjv3.8M9OHtn1OSL8drMu6adCTD/W1vV4Davoou2', 0,'default.png');
+insert into users (name, email, password, admin, image) values ('Dominik Bletso', 'dbletso1@google.com.br', '$2a$10$E21aTmB6nVUJ0UrXsN7GJOYvF/sKq.vksr.snySh3LzSsfpWaTK6S', 0,'default.png');
+insert into users (name, email, password, admin, image) values ('Fulvia Winmill', 'fwinmill2@europa.eu', '$2a$10$AQA5MU6jsqGq1FDBsvR/KuPqfV3M5vFn2QASbA9HtC.jgb/hhz2vi',0 ,'default.png' );
+insert into users (name, email, password, admin, image) values ('Kelby Woliter', 'kwoliter3@bloglovin.com', '$2a$10$puzd1nPR0i2Xu0TwtyRT5unXvh8e9ip/hM.7xZYW2VA0HieeTnYm.', 0,'default.png');
+insert into users (name, email, password, admin, image) values ('Vincent Thurbon', 'vthurbon4@flavors.me', '$2a$10$zTiJHG5knpMSeMdWXqlImeKjVdKBna5dBYcmRaiJEvsAS1j/1aCyW', 0,'default.png');
+insert into users (name, email, password, admin, image) values ('Miguel Mora', 'miguelmora@gmail.com', '$2a$10$cpa5s4EWqIg9ytPlB5cUsOOV05Rwoh/KxU6.3nt4Wsvp5HlHsGdTK', 1,'default.png');
+insert into users (name, email, password, admin, image) values ('Eva Real', 'evareal@gmail.com', '$2a$10$cpa5s4EWqIg9ytPlB5cUsOOV05Rwoh/KxU6.3nt4Wsvp5HlHsGdTK', 1,'default.png');
+insert into users (name, email, password, admin, image) values ('Edgar Arellano', 'edgararrellano@gmail.com', '$2a$10$cpa5s4EWqIg9ytPlB5cUsOOV05Rwoh/KxU6.3nt4Wsvp5HlHsGdTK', 1,'default.png');
 
 insert into products (name, id_brand, price, discount, stock, description, image, id_color,id_categories) values ('Coronet Ebony', 1, 11900, 10, 3,'Epiphone Coronet es uno de los primeros y más exitosos diseños originales de guitarra eléctrica de cuerpo sólido de Epiphone. La última versión recupera muchas de las características de los primeros modelos Coronet, incluido el cuerpo simétrico de caoba de doble corte con una sola pastilla Epiphone PRO ™ P-90 Dogear, tres en un lado de cabezal Kalamazoo de tamaño reducido con insignia Epiphone Bikini y ajuste de botón de marfil máquinas, y un golpeador de mariposa blanco con el logo de la E en lámina.', 'EpiphoneCoronetEbony.jpg', 1,1);
 insert into products (name, id_brand, price, discount, stock, description, image, id_color,id_categories) values ('000Jr-10 Dreadnought Junior', 2, 13600, 20, 5,'Gracias a su caja de madera sólida de sapele, tapa de sitka de madera sólida, en escala 24\" que te permite una mejor estabilidad de afinación con una comodidad para tocar que amarás. Peso ligero, tamaño compacto con un potente rango medio y calidez.', 'Martin000jr-10.jpg',2 , 1);
