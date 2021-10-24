@@ -7,7 +7,8 @@ const controller = {
     index: (req, res) => {
         res.render("register", {
             styles: '/static/css/styles-login-register.css',
-            titulo: 'Registro'
+            titulo: 'Registro',
+            user: undefined
         });
     },
     register: (req, res) => {
@@ -17,7 +18,8 @@ const controller = {
                 errors: resultValidation.mapped(),
                 oldData: req.body,
                 styles: '/static/css/styles-login-register.css',
-                titulo: 'Registro'
+                titulo: 'Registro',
+                user: undefined
             });
         } else {
             //Guardamos en la base de datos

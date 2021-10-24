@@ -11,7 +11,8 @@ const controller ={
             res.render('index',{
                 styles: '/static/css/index.css',
                 titulo: 'Bienvenidos',
-                products: products
+                products: products,
+                user: req.session.login === undefined ? req.session.login : req.session.login.name
             })
         });
     }

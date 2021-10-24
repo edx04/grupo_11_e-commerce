@@ -8,7 +8,9 @@
                     </a>
                 </div>
                 <div class="logo-nav">
+                    <a href="/">
                     <img src="/static/images/logo.png" class="logo">
+                    </a>
                 </div>
             </div>
             <div class="center-nav">
@@ -26,8 +28,12 @@
                     <input type="text" placeholder="Search...">
                 </div>
                 <ul>
-                    <li><a href="/register">Registro</a></li>
-                    <li><a href="/login">Ingresa</a></li>
+                    <% if (user === undefined) { %>
+                        <li><a href="/register">Registro</a></li>
+                        <li><a href="/login">Ingresa</a></li>
+                    <% }else{ %>
+                        <li><a href="/perfil"><%= user %></a></li>
+                    <% } %> 
                     <li>
                         <a href="/productCart"> <i class="fas fa-shopping-cart"></i></a>
                     </li>

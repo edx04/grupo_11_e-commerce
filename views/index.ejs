@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include ('./partials/head',{styles: 'static/css/index.css', titulo:'Home'})%>
+<%- include ('./partials/head',{styles, titulo})%>
 <body>
-<%- include('./partials/header') %>
+<%- include('./partials/header',{user}) %>
     <main>
         <section>
             <div class="slider">
@@ -53,7 +53,6 @@
                         <div class="articulo">
                             <h5 class="descripcion"><%= products[n].name %></h5>
                             <h5 class="descripcion"><%= products[n].discount %>%</h5>
-                            
                         </div>
                     </a>
                 </article>

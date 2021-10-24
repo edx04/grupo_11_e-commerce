@@ -17,7 +17,8 @@ const controller = {
             res.render("products", {
                 styles: '/static/css/index.css',
                 titulo: 'Products',
-                products: productos
+                products: productos,
+                user: req.session.login === undefined ? req.session.login : req.session.login.name
             });
         })
 
@@ -31,11 +32,10 @@ const controller = {
                 res.render("createProduct", {
                     styles: '/static/css/editProduct.css',
                     titulo: 'createProduct',
-                    brands: brands
+                    brands: brands,
+                    user: req.session.login === undefined ? req.session.login : req.session.login.name
                 });
             })
-
-
     },
 
     /*** Detalle de un producto en particular ***/
@@ -45,7 +45,7 @@ const controller = {
         }).then(product => {
             console.log(product)
             if (product) {
-                res.render("productDetail", { product });
+                res.render("productDetail", { product, user: req.session.login === undefined ? req.session.login : req.session.login.name });
             } else {
                 res.redirect("/products")
             }
@@ -53,10 +53,6 @@ const controller = {
         }).catch(e => {
             console.log(e)
         })
-
-
-
-
     },
 
     /*** Acción de creación (a donde se envía el formulario) ***/
@@ -90,9 +86,6 @@ const controller = {
 
     /*** Formulario de edición de productos ***/
     edit: (req, res) => {
-
-
-
         db.Brands.findAll()
             .then(brands => {
                 db.Products.findByPk(req.params.id, {
@@ -101,25 +94,16 @@ const controller = {
                     if (product) {
                         db.Colors.findAll().then(colors => {
                             console.log(colors)
-                            res.render("editProduct", { product: product, brands, colors});
+                            res.render("editProduct", { product: product, brands, colors, user: req.session.login === undefined ? req.session.login: req.session.login.name});
                         })
-                       
+
                     } else {
                         res.redirect('/products/create')
                     }
-
                 }).catch(e => {
                     console.log(e)
                 })
-
-
-
             });
-
-
-
-
-
     },
 
     /*** Acción de edición (a donde se envía el formulario) ***/

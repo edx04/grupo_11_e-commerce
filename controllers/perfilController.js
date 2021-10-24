@@ -3,12 +3,13 @@ const db = require("../src/database/models");
 
 const controller = {
     index: (req, res) => {
+
         usuario = req.session.login;
         res.render("perfil", {
             styles: '/static/css/perfil.css',
             titulo: 'perfil',
             nombre: usuario.name,
-            imagen: usuario.image
+            imagen: usuario.image,
         });
     },
 
@@ -36,7 +37,7 @@ const controller = {
         db.Users.update({
             image: formulario.image,
             name: formulario.name,
-            email: formulario.email   
+            email: formulario.email,
             
         },{
             where: {id:usuario.id}
@@ -53,11 +54,10 @@ const controller = {
     },
 
     logout: (req,res) =>{
-        req.session.login = null;
+        req.session.destroy();
         res.cookie("recordarme", null, {
             maxAge: 0,
         })
-        console.log("logout")
         res.redirect("/")
     }
     

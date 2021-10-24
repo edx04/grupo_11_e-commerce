@@ -6,7 +6,8 @@ const controller = {
     index: (req, res) => {
         res.render("login", {
             styles: '/static/css/styles-login-register.css',
-            titulo: 'Inicia sesión'
+            titulo: 'Inicia sesión',
+            user: undefined
         });
     },
     login: (req, res, next) => {
@@ -16,7 +17,8 @@ const controller = {
                 errors: resultValidation.mapped(),
                 oldData: req.body,
                 styles: '/static/css/styles-login-register.css',
-                titulo: 'Inicia Sesion'
+                titulo: 'Inicia Sesión',
+                user: undefined
             });
         } else {
             //consultamos en la base de datos
@@ -30,7 +32,7 @@ const controller = {
                 }
             }).then(user => {
                 if (user) {
-                    //console.log(user)
+                    console.log(user)
                     if (bcrypt.compareSync(req.body.password, user.password)) {
                         login = user
                     } else {
@@ -65,7 +67,8 @@ const controller = {
                         errors: error,
                         oldData: req.body,
                         styles: '/static/css/styles-login-register.css',
-                        titulo: 'Inicia sesión'
+                        titulo: 'Inicia sesión',
+                        user: undefined
                     });
                 }
             })
