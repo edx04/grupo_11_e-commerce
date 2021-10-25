@@ -37,6 +37,18 @@ img{
     height: 70%;   
 }
 
+/* */
+.span-descuento{
+    background-color:#333;
+    position: absolute;
+    top:5px;
+    right:5px;
+    padding: 5px;
+    font-size: large;
+    font-weight: bold;
+}
+
+
 /* Slider */
 
 .slider{
@@ -144,6 +156,11 @@ img{
 
     article:hover .descripcion{
         color:#116479;
+        /*color:#7e0b0b;*/
+    }
+
+    article:hover .span-descuento{
+        background-color:#1a3255d3;
         /*color:#7e0b0b;*/
     }
 }

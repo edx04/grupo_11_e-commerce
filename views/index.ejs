@@ -49,10 +49,11 @@
             <div class="contenedor-articulos">
                 <% for (let n=0;n<=3;n++) { %>
                 <article><img src="static/images/products/<%= products[n].image %>" alt=<%= products[n].name %> class="img-articulo">
+                    <span class="span-descuento">- <%= products[n].discount %>%</span>
                     <a href="products/<%= products[n].id %>">
                         <div class="articulo">
-                            <h5 class="descripcion"><%= products[n].name %></h5>
-                            <h5 class="descripcion"><%= products[n].discount %>%</h5>
+                            <h4 class="descripcion"><%= products[n].name %></h4>
+                            <h5 class="descripcion">$ <%= products[n].price %></h5>
                         </div>
                     </a>
                 </article>
