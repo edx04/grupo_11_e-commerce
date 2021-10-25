@@ -29,12 +29,16 @@ const controller = {
         db.Brands.findAll()
             .then(brands => {
                 console.log(brands)
-                res.render("createProduct", {
-                    styles: '/static/css/editProduct.css',
-                    titulo: 'createProduct',
-                    brands: brands,
-                    user: req.session.login === undefined ? req.session.login : req.session.login.name
-                });
+                db.Colors.findAll().then(colors => {
+                    res.render("createProduct", {
+                        styles: '/static/css/editProduct.css',
+                        titulo: 'createProduct',
+                        brands: brands,
+                        colors: colors,
+                        user: req.session.login === undefined ? req.session.login : req.session.login.name
+                    });
+                })
+                
             })
     },
 
@@ -156,7 +160,26 @@ const controller = {
 
 
         res.redirect("/products");
-    }
+    },
+
+    /*findGuitars: (req, res) => {
+        db.Products.findAll({
+            
+            include: [{ association: "color" }, { association: "brand" }, { association: "category" }],
+            where: {
+                category: 1
+            }
+        }).then(guitarras => {
+            console.log(guitarras)
+            res.render("products", {
+                styles: '/static/css/index.css',
+                titulo: 'Guitarras',
+                products: guitarras,
+                user: req.session.login === undefined ? req.session.login : req.session.login.name
+            });
+        })
+
+    }*/
 };
 
 module.exports = controller;

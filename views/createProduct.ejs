@@ -54,39 +54,18 @@
                             </select>
                         </div>
         
-
-
-
-
-                        <div class="colores">
+                        <div class="div-formEdit">
                             <p class="italics">Colores</p>
                             <div class="check-colores">
-                                <div>
-                                    <label for="color">Rojo</label>
-                                    <input type="checkbox" name="color" value="rojo" id="rojo">
-                                </div>
-                                <div>
-                                    <label for="color">Azul</label>
-                                    <input type="checkbox" name="color" value="azul" id="azul">
-                                </div>
-                                <div>
-                                    <label for="color">Verde</label>
-                                    <input type="checkbox" name="color" value="verde" id="verde">
-                                </div>
-                                <div>
-                                    <label for="color">Blanco</label>
-                                    <input type="checkbox" name="color" value="blanco" id="blanco">
-                                </div>
-                                <div>
-                                    <label for="color">Negro</label>
-                                    <input type="checkbox" name="color" value="negro" id="negro">
-                                </div>
-                                <div>
-                                    <label for="color">Otro</label>
-                                    <input type="checkbox" name="color" value="otro" id="otro">
-                                </div>
+                                <select name="color" id="color">
+                                <% colors.forEach((color) => { %>
+                                    <option value="<%- color.id %>"><%- color.name %></option>
+                                <% }) %>
+                                </select>
+        
                             </div>
                         </div>
+                        
 
                         <div class="div-formEdit">
                             <label for="precio" class="italics">Precio</label>
