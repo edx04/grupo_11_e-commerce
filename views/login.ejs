@@ -7,19 +7,23 @@
     <main class="login-register">
         <div class="full">
             <div class="izquierda">
-                <form action="/login" method="POST">
+                <form id= "formulario" action="/login" method="POST">
                     <h2>Inicia sesion</h2>
                     <input type="email" placeholder="Email de usuario" id="email" name="email"
                     value= "<%= locals.oldData ? oldData.email : null %>">
+                    <p class="error" id="errorEmail"></p>
                     <% if (locals.errors && errors.email ) { %>
-                        <p class="error"><%= errors.email.msg %>  </p>
+                        <p class="error" id="errorEmail"><%= errors.email.msg %>  </p>
                     <% } %>
                     <input type="password" placeholder="Contraseña" id="password" name="password">
-                    <% if (locals.errors && errors.password ) { %>
-                        <p class="error"><%= errors.password.msg %>  </p>
-                    <% } %>
+                    <p class="error" id="errorPassword"></p>
+                    <div id="divErrorPassword">
+                        <% if (locals.errors && errors.password ) { %>
+                            <p class="error" id="errorPasswordejs"><%= errors.password.msg %>  </p>
+                        <% } %>
+                    </div>                
                     <label><input type="checkbox" name="recordarme"> Recordarme </label><br>
-                    <button type="submit">Iniciar</button>
+                    <button id="submit" type="submit">Iniciar</button>
                 </form>
             </div>
             <div class="derecha">
