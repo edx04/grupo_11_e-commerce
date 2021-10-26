@@ -34,7 +34,8 @@ img{
 .img-articulo{
     filter: gray; 
       -webkit-filter: grayscale(1); 
-    height: 70%;   
+    height: 70%;
+    object-fit: contain;
 }
 
 /* */

@@ -51,6 +51,8 @@ const controller = {
 
     orders: (req, res) => {
         console.log("estamos en la orders");
+
+        
     },
 
     logout: (req,res) =>{
