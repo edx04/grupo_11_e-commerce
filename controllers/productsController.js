@@ -206,9 +206,10 @@ const controller = {
                     titulo: category.name,
                     products: products,
                     user: req.session.login === undefined ? req.session.login : req.session.login.name
-                });
+                });          
             })
         }).catch(e => {
+            res.redirect('/products');
             console.log(e)
         })
     }
