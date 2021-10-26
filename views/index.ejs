@@ -50,7 +50,37 @@
                 <% for (let n=0;n<=3;n++) { %>
                 <article><img src="static/images/products/<%= products[n].image %>" alt=<%= products[n].name %> class="img-articulo">
                     <span class="span-descuento">- <%= products[n].discount %>%</span>
-                    <a href="products/<%= products[n].id %>">
+
+                    <% switch(products[n].id_categories){ 
+                        case 1: %>
+                         <% category='guitarras' %>
+                         <% break; 
+                        case 2: %>
+                         <% category='accesorios' %>
+                         <% break; 
+                        case 3: %>
+                         <% category='baterias' %>
+                         <% break; 
+                        case 4: %>
+                         <% category='partes' %>
+                         <% break; 
+                        case 5: %>
+                         <% category='pianos' %>
+                         <% break; 
+                        case 6: %>
+                         <% category='bajos' %>
+                         <% break; 
+                        case 7: %>
+                         <% category='otros%20instrumentos' %>
+                         <% break; 
+                        default: %>
+                         <% category='products' %>
+                         <% break; %>
+                 <% } %>
+                 
+                     <% url='/products/'+category+'/' + products[n].id;%>
+                 
+                    <a href="<%= url %>">
                         <div class="articulo">
                             <h4 class="descripcion"><%= products[n].name %></h4>
                             <h5 class="descripcion">$ <%= products[n].price %></h5>
@@ -58,6 +88,11 @@
                     </a>
                 </article>
                 <% } %>
+                
+            </div>
+            <div class="enlace-products">
+                <a href="/products">Ver más productos</a>
+
             </div>
         </section>
     </main>
