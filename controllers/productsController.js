@@ -13,7 +13,7 @@ const controller = {
         db.Products.findAll({
             include: [{ association: "color" }, { association: "brand" }, { association: "category" }]
         }).then(productos => {
-            console.log(productos[0])
+            //console.log(productos[0])
             res.render("products", {
                 styles: '/static/css/index.css',
                 titulo: 'Products',
@@ -44,19 +44,46 @@ const controller = {
 
     /*** Detalle de un producto en particular ***/
     detail: (req, res) => {
-        db.Products.findByPk(req.params.id, {
-            include: [{ association: "color" }, { association: "brand" }, { association: "category" }]
-        }).then(product => {
-            console.log(product)
-            if (product) {
-                res.render("productDetail", { product, user: req.session.login === undefined ? req.session.login : req.session.login.name });
-            } else {
-                res.redirect("/products")
-            }
-
-        }).catch(e => {
-            console.log(e)
+        db.Categories.findOne({      
+            where: {
+                name: req.params.category
+            },
+        }).then(category => {
+            /*console.log(category.name)*/
+            db.Products.findAll({
+                where: {
+                    id_categories: category.id
+                },
+                include: [{ association: "color" }, { association: "brand" }, { association: "category" }]
+            })
+            .then(products =>{
+                let x = false;
+                let i = 0;
+                console.log(req.params.id)
+                for(i=0;i<=products.length-1;i++){
+                    //console.log(products[i].id);
+                    if(products[i].id==req.params.id){
+                        x=true;
+                        /*console.log(i);*/
+                        break;
+                    }
+                }
+                
+                if(x){                  
+                    res.render("productDetail", { 
+                        product: products[i], 
+                        user: req.session.login === undefined ? req.session.login : req.session.login.name 
+                    });
+                }
+                else{
+                    res.redirect('/products');
+                }
+                
+            }).catch(e => {
+                console.log(e)
+            })
         })
+
     },
 
     /*** Acción de creación (a donde se envía el formulario) ***/
@@ -162,24 +189,31 @@ const controller = {
         res.redirect("/products");
     },
 
-    /*findGuitars: (req, res) => {
-        db.Products.findAll({
-            
-            include: [{ association: "color" }, { association: "brand" }, { association: "category" }],
+    findByCategory: (req, res) => {
+        db.Categories.findOne({      
             where: {
-                category: 1
-            }
-        }).then(guitarras => {
-            console.log(guitarras)
-            res.render("products", {
-                styles: '/static/css/index.css',
-                titulo: 'Guitarras',
-                products: guitarras,
-                user: req.session.login === undefined ? req.session.login : req.session.login.name
-            });
+                name: req.params.category
+            },
+        }).then(category => {
+            db.Products.findAll({
+                where:{
+                    id_categories: category.id
+                },
+                include: [{ association: "color" }, { association: "brand" }, { association: "category" }]
+            }).then(products => {
+                res.render("products", {
+                    styles: '/static/css/index.css',
+                    titulo: category.name,
+                    products: products,
+                    user: req.session.login === undefined ? req.session.login : req.session.login.name
+                });
+            })
+        }).catch(e => {
+            console.log(e)
         })
+    }
 
-    }*/
+    
 };
 
 module.exports = controller;
