@@ -10,29 +10,33 @@
                 <h2>Crea tu cuenta</h2>
                 <form action="/register" method="POST" enctype="multipart/form-data">
                     <input type="text" name="name" placeholder="Nombre" id="nombre"
-                    value= "<%= locals.oldData ? oldData.name : null %>"
-                    >
+                    value= "<%= locals.oldData ? oldData.name : null %>">
+                    <p class="error" id="errorNombre"></p>
                     <% if (locals.errors && errors.name ) { %>
-                        <p class="error"><%= errors.name.msg %>  </p>
+                        <p class="error" id="errorNombreejs"><%= errors.name.msg %>  </p>
                     <% } %>
                     <input type="email" placeholder="Email" name="email" id="email"
                     value= "<%= locals.oldData ? oldData.email : null %>">
+                    <p class="error" id="errorEmail"></p>
                     <% if (locals.errors && errors.email ) { %>
-                        <p class="error"><%= errors.email.msg %>  </p>
+                        <p class="error" id="errorEmailejs"><%= errors.email.msg %>  </p>
                     <% } %>
                     <input type="password" name="password" id="password" placeholder="Contraseña">
+                    <p class="error" id="errorPasssword"></p>
                     <% if (locals.errors && errors.password) { %>
-                        <p class="error"><%= errors.password.msg %>  </p>
+                        <p class="error" id="errorPassswordejs"><%= errors.password.msg %>  </p>
                     <% } %>
-                    <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Confirmar contraseña" >
+                    <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Confirmar contraseña">
+                    <p class="error" id="errorPassswordConfirm"></p>
                     <% if (locals.errors && errors.passwordConfirm) { %>
-                        <p class="error"><%= errors.passwordConfirm.msg %>  </p>
+                        <p class="error" id="errorPassswordConfirmejs"><%= errors.passwordConfirm.msg %>  </p>
                     <% } %>
                     <h3>Imagen de perfil</h3>
                         <label for="image" class="custom-file-upload">Subir imagen
 						    <input type="file" name="image" id="image"/>
                         </label><br>
-                    <button type="submit">Registrar</button>
+                        <p class="error" id="errorImagen"></p>
+                    <button id="registrar" type="submit">Registrar</button>
                 </form>
                 <a href="/login">¿Ya tienes cuenta?</a>
             </div>

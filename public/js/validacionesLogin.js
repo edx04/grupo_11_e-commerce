@@ -29,7 +29,7 @@ window.addEventListener('load', function() {
 
     let erroresPassword = true;
 
-    password.addEventListener("focus", function(){
+    function valdiacionesPassword(){
         if (password.value === ""){
             errorPassword.innerText= "Debes de ingresar tu contraseña";
             erroresPassword = true;
@@ -38,18 +38,11 @@ window.addEventListener('load', function() {
             erroresPassword = false;
             errorPassword.innerText= "";
         }
-    });
+    }
 
-    password.addEventListener("blur", function(){
-        if (password.value === ""){
-            errorPassword.innerText= "Debes de ingresar tu contraseña";
-            erroresPassword = true;
-            errorPasswordejs.innerText = ""
-        }else{
-            erroresPassword = false;
-            errorPassword.innerText= "";
-        }
-    });
+    password.addEventListener("focus", valdiacionesPassword);
+
+    password.addEventListener("blur", valdiacionesPassword);
 
     password.addEventListener("keydown", function(){
         errorPassword.innerText= "";
