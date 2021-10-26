@@ -12,7 +12,6 @@ window.addEventListener('load', function() {
     
 
     let erroresEmail = true;
-    email.focus();
 
     email.addEventListener("blur", function(){
         if (email.value === ""){
@@ -53,7 +52,8 @@ window.addEventListener('load', function() {
         if (erroresEmail || erroresPassword){
             if(erroresEmail){
                 email.focus();
-            }else{
+            }
+            if(erroresPassword){
                 password.focus();
             }
         }else{

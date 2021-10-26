@@ -2,6 +2,7 @@ window.addEventListener('load', function () {
 
     let form = document.querySelector("form");
     let button = document.querySelector("#registrar");
+    let buttonlogin = document.querySelector("#login");
 
     let nombre = document.querySelector("#nombre");
     let email = document.querySelector("#email");
@@ -17,8 +18,6 @@ window.addEventListener('load', function () {
 
 
     let erroresNombre = true;
-
-    nombre.focus();
 
     function validacionesNombre () {
         if (nombre.value === "") {
@@ -38,6 +37,10 @@ window.addEventListener('load', function () {
 
     nombre.addEventListener("blur", validacionesNombre);
 
+    nombre.addEventListener("keydown", function(){
+        errorNombre.innerText= "";
+    });
+
     let erroresEmail = true;
 
     function validacionesEmail() {
@@ -52,6 +55,10 @@ window.addEventListener('load', function () {
             erroresEmail = false;
         }
     }
+
+    email.addEventListener("keydown", function(){
+        errorEmail.innerText= "";
+    });
 
     email.addEventListener("blur",validacionesEmail);
     email.addEventListener("focus",validacionesEmail);
@@ -71,6 +78,10 @@ window.addEventListener('load', function () {
         }
     }
 
+    password.addEventListener("keydown", function(){
+        errorPassword.innerText= "";
+    });
+
     password.addEventListener("blur", valdiacionesPassword);
     password.addEventListener("focus", valdiacionesPassword);
 
@@ -89,6 +100,10 @@ window.addEventListener('load', function () {
             erroresPasswordConfirm = false;
         }
     }
+
+    passwordConfirm.addEventListener("keydown", function(){
+        errorPasswordConfirm.innerText= "";
+    });
 
     passwordConfirm.addEventListener("blur", validacionesPassowrdConfirm);
     passwordConfirm.addEventListener("focus", validacionesPassowrdConfirm);
@@ -113,18 +128,22 @@ window.addEventListener('load', function () {
             console.log("Errores")
             if (erroresNombre){
                 nombre.focus();
-            }else if(erroresEmail){
+            }
+            if(erroresEmail){
                 email.focus();
-            }else if(erroresPassword){
+            }
+            if(erroresPassword){
                 password.focus();
-            }else if(erroresPasswordConfirm){
+            }
+            if(erroresPasswordConfirm){
                 passwordConfirm.focus();
             }
         }else{
             console.log("sin errores")
             HTMLFormElement.prototype.submit.call(form)
         }
-    })
+    });
+
 
 });
 
