@@ -84,6 +84,9 @@
                     <br>
                     <input type="number" value="<%=locals.old && old.price? old.price : product.price%>" placeholder="0.00" name="precio" id="precio" min="0" step="0.01" >
                 </div>
+                <%if (locals.errors && errors.precio){%>
+                    <p class="error" style="color:#ed9191"><%= errors.precio.msg %></p>
+                <%}%>
 
                 <div class="div-formEdit">
                     <label for="descuento" class="italics">Descuento</label>
