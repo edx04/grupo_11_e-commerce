@@ -179,7 +179,7 @@ const controller = {
             }
         })
 
-
+        console.log(`delete ${req.params.id} `)
         res.redirect("/products");
     },
 
