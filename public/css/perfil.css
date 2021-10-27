@@ -50,7 +50,7 @@ button{
     width: 235px;
 }
 
-form input{
+.editPerfilForm input{
     display: block;
     text-align: center;
     margin: 15px auto;

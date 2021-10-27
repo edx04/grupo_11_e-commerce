@@ -40,7 +40,7 @@ const controller = {
                         user: req.session.login === undefined ? req.session.login : req.session.login.name
                     });
                 })
-                
+
             })
     },
 
@@ -101,7 +101,7 @@ const controller = {
                     if (product) {
                         db.Colors.findAll().then(colors => {
                             console.log(colors)
-                            res.render("editProduct", { product: product, brands ,colors,user: req.session.login === undefined ? req.session.login: req.session.login.name});
+                            res.render("editProduct", { product: product, brands, colors, user: req.session.login === undefined ? req.session.login : req.session.login.name });
                         })
                     } else {
                         res.redirect('/products/create')
@@ -121,7 +121,7 @@ const controller = {
         console.log(imagenProducto)
         console.log(formulario.perfil)
 
-        if (req.file == undefined){
+        if (req.file == undefined) {
             formulario.perfil = imagenProducto;
             console.log("Entro en el if")
         } else {
@@ -154,7 +154,7 @@ const controller = {
                     }
                 })
             res.redirect("/products")
-               
+
 
         }).catch(e => {
             console.log(e)
@@ -176,40 +176,40 @@ const controller = {
         res.redirect("/products");
     },
 
-    search: (req,res) =>{
-        const {term} =req.query;
+    search: (req, res) => {
+        const { term } = req.query;
         db.Brands.findOne({
-            where:{
-                name:{[db.Sequelize.Op.like]:'%'+term+'%'}
+            where: {
+                name: { [db.Sequelize.Op.like]: '%' + term + '%' }
             }
 
-        }).then(brand=>{
+        }).then(brand => {
             let brandId;
-            if(brand==null){
-                brandId=0;
+            if (brand == null) {
+                brandId = 0;
             }
-            else{
-                brandId=brand.id
+            else {
+                brandId = brand.id
             }
             db.Categories.findOne({
-                where:{
-                    name:{[db.Sequelize.Op.like]:'%'+term+'%'}
+                where: {
+                    name: { [db.Sequelize.Op.like]: '%' + term + '%' }
                 }
-            }).then(category=>{
+            }).then(category => {
                 let categoryId;
-                if(category==null){
-                    categoryId=0;
+                if (category == null) {
+                    categoryId = 0;
                 }
-                else{
-                    categoryId=category.id;
+                else {
+                    categoryId = category.id;
                 }
                 db.Products.findAll({
-                    where:{
-                        [db.Sequelize.Op.or]:[
-                            {description:{[db.Sequelize.Op.like]:'%'+term+'%'}},
-                            {name: {[db.Sequelize.Op.like]:'%'+term+'%'}},
-                            {id_brand:brandId},
-                            {id_categories:categoryId}
+                    where: {
+                        [db.Sequelize.Op.or]: [
+                            { description: { [db.Sequelize.Op.like]: '%' + term + '%' } },
+                            { name: { [db.Sequelize.Op.like]: '%' + term + '%' } },
+                            { id_brand: brandId },
+                            { id_categories: categoryId }
                         ]
                     }
                 }).then(productos => {
@@ -223,15 +223,15 @@ const controller = {
                 })
             })
         })
-        
-       
+
+
     }
 
-    
+
 };
 
 function eliminarImagen(imagen) {
-    fsp.unlink("./public/images/products/"+imagen)
+    fsp.unlink("./public/images/products/" + imagen)
         .then(() => {
             console.log("imagen eliminada")
         }).catch(err => {
