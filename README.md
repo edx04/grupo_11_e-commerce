@@ -1,4 +1,4 @@
-# grupo_11_e-commerce
+# Grupo_11_e-commerce  Instrumentos musicales
 
 ## Developers
 
@@ -38,6 +38,8 @@ Tablero del equipo : https://trello.com/b/SuYbCGEe/equipo-11
 ## Requerimientos
 
 - [Node.js](https://nodejs.org/) 
+- [MySql](https://www.mysql.com/)
+- [React](https://es.reactjs.org/)
 
 ## Instalación
 
