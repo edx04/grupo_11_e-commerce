@@ -52,6 +52,14 @@
     display: flex;
     justify-content: space-around;
 }
+.boton-delete{
+    display: flex;
+    justify-content: space-around;
+}
+
+.boton-delete .boton{
+    background-color: #791122; 
+}
 
 .boton{
     border-radius: 10px;
