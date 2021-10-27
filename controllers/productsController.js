@@ -142,7 +142,30 @@ const controller = {
 
     /*** Acción de edición (a donde se envía el formulario) ***/
     update: (req, res) => {
-        //Actualizamos en la base de datos
+        let errores = validationResult(req);
+        if(errores.errors.length>0){
+            db.Brands.findAll()
+            .then(brands => {
+                db.Products.findByPk(req.params.id, {
+                    include: [{ association: "color" }, { association: "brand" }, { association: "category" }]
+                }).then(product => {
+                    req.session.productImage = product.dataValues.image;
+                    if (product) {
+                        db.Colors.findAll().then(colors => {
+                            console.log(colors)
+                            res.render("editProduct", { product: product, brands, colors, errors: errores.mapped(),
+                                old: req.body, user: req.session.login === undefined ? req.session.login : req.session.login.name });
+                        })
+                    } else {
+                        res.redirect('/products/create')
+                    }
+                }).catch(e => {
+                    console.log(e)
+                })
+            });
+        }
+        else{
+            //Actualizamos en la base de datos
         imagenProducto = req.session.productImage;
         formulario = req.body;
         console.log("archivo mandado desde el formulario")
@@ -187,6 +210,9 @@ const controller = {
         }).catch(e => {
             console.log(e)
         })
+        }
+
+        
 
 
     },

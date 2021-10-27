@@ -42,7 +42,7 @@ router.post('/create', upload.single("perfil"), validateProducts, productsContro
 router.get('/:id/edit', productsController.edit); 
 
 /*** Acción de edición (a donde se envía el formulario) ***/ 
-router.post('/:id', upload.single("perfil"), productsController.update); 
+router.post('/:id', upload.single("perfil"), validateProducts, productsController.update); 
 
 /*** Acción de borrado ***/ 
 router.delete('/:id', productsController.destroy); 
