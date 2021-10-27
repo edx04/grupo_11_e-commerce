@@ -3,13 +3,14 @@ window.addEventListener('load',function(){
     let nombre=document.querySelector("#nombre");
     let descripcion=document.querySelector("#descripcion");
     let precio=document.querySelector("#precio");
-    let foto = document.querySelector("#foto");
+    let image = document.querySelector("#foto");
     //let checkboxes = document.querySelectorAll('input[type=checkbox]');
 
 
     nombre.addEventListener("blur",function(){
         if(nombre.value==""){
             nombre.placeholder="Debes ingresar un nombre";
+            nombre.background="#ed9191";
         }
         else if(nombre.value.length<3){
             nombre.value="";
@@ -30,6 +31,20 @@ window.addEventListener('load',function(){
         if(precio.value<=0){
             precio.value="";
             precio.placeholder="Debes ingresar un precio mayor a 0";
+        }
+    });
+
+    descuento.addEventListener("blur",function(){
+        if(descuento.value==""){
+            descuento.value="";
+            descuento.placeholder="Debes ingresar un valor de descuento";
+        }
+    });
+
+    stock.addEventListener("blur",function(){
+        if(stock.value==""){
+            stock.value="";
+            stock.placeholder="Debes ingresar un valor de stock";
         }
     });
 

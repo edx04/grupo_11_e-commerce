@@ -8,7 +8,7 @@ const path = require("path");
 const productsController = require('../controllers/productsController');
 
 // ************ Back-end validations ************
-//const validateProducts = require('../middlewares/validaciones/validacionesCreate');
+const validateProducts = require('../middlewares/validaciones/validacionesCreate');
 
 
 //Configuración para multer
@@ -36,7 +36,7 @@ router.get('/search', productsController.search);
 router.get('/:id', productsController.detail); 
 
 /*** Acción de creación (a donde se envía el formulario) ***/
-router.post('/create', upload.single("perfil"), productsController.store); 
+router.post('/create', upload.single("perfil"), validateProducts, productsController.store); 
 
 /*** Formulario de edición de productos ***/ 
 router.get('/:id/edit', productsController.edit); 
