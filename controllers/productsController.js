@@ -169,25 +169,53 @@ const controller = {
 
     search: (req,res) =>{
         const {term} =req.query;
-        db.Products.findAll({
+        db.Brands.findOne({
             where:{
-                [db.Sequelize.Op.or]:[
-                    {description:{[db.Sequelize.Op.like]:'%'+term+'%'}},
-                    {name: {[db.Sequelize.Op.like]:'%'+term+'%'}}
-                ]
-                
-            },
+                name:{[db.Sequelize.Op.like]:'%'+term+'%'}
+            }
 
+        }).then(brand=>{
+            let brandId;
+            if(brand==null){
+                brandId=0;
+            }
+            else{
+                brandId=brand.id
+            }
+            db.Categories.findOne({
+                where:{
+                    name:{[db.Sequelize.Op.like]:'%'+term+'%'}
+                }
+            }).then(category=>{
+                let categoryId;
+                if(category==null){
+                    categoryId=0;
+                }
+                else{
+                    categoryId=category.id;
+                }
+                db.Products.findAll({
+                    where:{
+                        [db.Sequelize.Op.or]:[
+                            {description:{[db.Sequelize.Op.like]:'%'+term+'%'}},
+                            {name: {[db.Sequelize.Op.like]:'%'+term+'%'}},
+                            {id_brand:brandId},
+                            {id_categories:categoryId}
+                        ]
+                    }
+                }).then(productos => {
+                    //console.log(productos[0])
+                    res.render("products", {
+                        styles: '/static/css/index.css',
+                        titulo: term,
+                        products: productos,
+                        user: req.session.login === undefined ? req.session.login : req.session.login.name
+                    });
+                })
+            })
         })
-        .then(productos => {
-            //console.log(productos[0])
-            res.render("products", {
-                styles: '/static/css/index.css',
-                titulo: 'Products',
-                products: productos,
-                user: req.session.login === undefined ? req.session.login : req.session.login.name
-            });
-        })
+        
+       
     }
 
     
