@@ -1,5 +1,6 @@
 const { body } = require('express-validator');
 const fs = require('fs');
+const fsp = require('fs').promises
 const path = require('path');
 const db = require('../src/database/models');
 //const { validationResult } = require("express-validator");
@@ -116,12 +117,20 @@ const controller = {
         //Actualizamos en la base de datos
         imagenProducto = req.session.productImage;
         formulario = req.body;
-        try {
-            formulario.image = req.file.filename;
+        console.log("archivo mandado desde el formulario")
+        console.log(imagenProducto)
+        console.log(formulario.perfil)
+
+        if (req.file == undefined){
+            formulario.perfil = imagenProducto;
+            console.log("Entro en el if")
+        } else {
+            console.log("Entro en el else")
+            formulario.perfil = req.file.filename;
             eliminarImagen(imagenProducto);
-        } catch (error) {
-            formulario.image = imagenProducto
         }
+        console.log("archivo mandado desde el formulario")
+        console.log(formulario.perfil);
         db.Colors.findOne({
             where: {
                 id: formulario.color
@@ -222,7 +231,7 @@ const controller = {
 };
 
 function eliminarImagen(imagen) {
-    fs.unlink("./public/images/users/"+imagen)
+    fsp.unlink("./public/images/products/"+imagen)
         .then(() => {
             console.log("imagen eliminada")
         }).catch(err => {
