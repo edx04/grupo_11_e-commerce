@@ -165,6 +165,29 @@ const controller = {
 
 
         res.redirect("/products");
+    },
+
+    search: (req,res) =>{
+        const {term} =req.query;
+        db.Products.findAll({
+            where:{
+                [db.Sequelize.Op.or]:[
+                    {description:{[db.Sequelize.Op.like]:'%'+term+'%'}},
+                    {name: {[db.Sequelize.Op.like]:'%'+term+'%'}}
+                ]
+                
+            },
+
+        })
+        .then(productos => {
+            //console.log(productos[0])
+            res.render("products", {
+                styles: '/static/css/index.css',
+                titulo: 'Products',
+                products: productos,
+                user: req.session.login === undefined ? req.session.login : req.session.login.name
+            });
+        })
     }
 
     

@@ -29,6 +29,9 @@ router.get('/', productsController.index);
 /*** Formulario de creacion de productos ***/ 
 router.get('/create', productsController.create); 
 
+/*** Busqueda de productos ***/ 
+router.get('/search', productsController.search);
+
 /*** Detalle de un producto en particular ***/
 router.get('/:id', productsController.detail); 
 
