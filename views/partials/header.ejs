@@ -3,9 +3,37 @@
         <div class="main-header">
             <div class="left-nav">
                 <div class="boton-nav">
-                    <a href="#" class="hamburger-button">
+                    <div id="menu-bar">
+                        <div id="menu" onclick="onClickMenu()">
+                            <div id="bar1" class="bar"></div>
+                            <div id="bar2" class="bar"></div>
+                            <div id="bar3" class="bar"></div>
+                        </div>
+                        <ul class="nav" id="nav">
+                            <li><a href="/products/search?term=guitarras">Guitarras</a></li>
+                            <li><a href="/products/search?term=bajos">Bajos</a></li>
+                            <li><a href="/products/search?term=baterias">Baterías</a></li>
+                            <li><a href="/products/search?term=pianos">Pianos</a></li>
+                            <li><a href="/products/search?term=otros+instrumentos">Otros</a></li>
+                            <li><a href="/products/search?term=partes">Partes</a></li>
+                            <li><a href="/products/search?term=accesorios">Accesorios</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-bg" id="menu-bg"></div>
+                    <!--<a href="#" class="hamburger-button">
                         <i class="fas fa-bars" style="color:lightgray"></i>
                     </a>
+                    <div id="myLinks">
+                        <a href="/products">Guitarras</a>
+                        <a href="/products">Bajos</a>
+                        <a href="/products">Baterias</a>
+                        <a href="/products">Pianos</a>
+                        <a href="/products">Otros instrumentos</a>
+                        <a href="/products">Partes</a>
+                        <a href="/products">Accesorios</a>
+                    </div>
+                    
+                      </a>-->
                 </div>
                 <div class="logo-nav">
                     <a href="/">
@@ -53,3 +81,11 @@
 
 
 </header>
+<script>
+   function onClickMenu(){
+	document.getElementById("menu").classList.toggle("change");
+	document.getElementById("nav").classList.toggle("change");
+	
+	document.getElementById("menu-bg").classList.toggle("change-bg");
+}
+</script>
