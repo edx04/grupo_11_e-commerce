@@ -48,14 +48,17 @@ class TotalsRow extends Component{
 				<div className="row">
                     <TotalCard 
                         titulo='Total de productos'
+                        color='success'
                         total={this.state.totalProducts}
                     />
                     <TotalCard
                         titulo='Total de usuarios'
+                        color='danger'
                         total={this.state.totalUsers}
                     />
                     <TotalCard
                         titulo='Total de categorias'
+                        color='info'
                         total={this.state.totalCategories}
                     />
                 </div>

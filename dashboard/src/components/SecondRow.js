@@ -114,30 +114,37 @@ class SecondRow extends Component{
                         <div className="row">
                             <TotalCard 
                                 titulo="Guitarras"
+                                color="info"
                                 total={this.state.c1}
                             />
                             <TotalCard 
                                 titulo="Accesorios"
+                                color="info"
                                 total={this.state.c2}
                             />
                             <TotalCard 
                                 titulo="Baterías"
+                                color="info"
                                 total={this.state.c3}
                             />
                             <TotalCard 
                                 titulo="Pianos"
+                                color="info"
                                 total={this.state.c4}
                             />
                             <TotalCard 
                                 titulo="Partes"
+                                color="info"
                                 total={this.state.c5}
                             />
                             <TotalCard 
                                 titulo="Bajos"
+                                color="info"
                                 total={this.state.c6}
                             />
                             <TotalCard 
                                 titulo="Otros instrumentos"
+                                color="info"
                                 total={this.state.c7}
                             />
                         </div>
