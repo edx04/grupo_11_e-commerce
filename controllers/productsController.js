@@ -15,7 +15,6 @@ const controller = {
         db.Products.findAll({
             include: [{ association: "color" }, { association: "brand" }, { association: "category" }]
         }).then(productos => {
-            console.log(productos[0])
             res.render("products", {
                 styles: '/static/css/index.css',
                 titulo: 'Products',
@@ -65,10 +64,18 @@ const controller = {
     store: (req, res) => {
         //const resultValidation = validationResult(req);
         //Agregamos a la base de datos
+        console.log("Esta es la marca")
         console.log(req.body.marca)
+        console.log(req.file.filename)
+
+        if (req.file == undefined){
+            req.body.perfil = "defult.png"
+        }else{
+            req.body.perfil = req.file.filename;
+        }
         db.Colors.findOne({
             where: {
-                name: req.body.color
+                id: req.body.color
             }
         }).then(color => {
             console.log(color.id)

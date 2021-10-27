@@ -36,7 +36,7 @@ router.get('/search', productsController.search);
 router.get('/:id', productsController.detail); 
 
 /*** Acción de creación (a donde se envía el formulario) ***/
-router.post('/create', productsController.store); 
+router.post('/create', upload.single("perfil"), productsController.store); 
 
 /*** Formulario de edición de productos ***/ 
 router.get('/:id/edit', productsController.edit); 

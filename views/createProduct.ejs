@@ -3,36 +3,35 @@
 <%- include ('./partials/head',{styles: '/static/css/editProduct.css', titulo:'Creación de producto'})%>
 <script src="/static/js/validacionesCreateProduct.js"></script>
 
-    <body>
-        <%- include('./partials/header',{user}) %>
-            <main class="main-edit">
-                <div class="titulo-edit">
-                    <h3>Crear producto</h3>
-                </div>
+<body>
+    <%- include('./partials/header',{user}) %>
+    <main class="main-edit">
+        <div class="titulo-edit">
+            <h3>Crear producto</h3>
+        </div>
 
-                <div class="form-edit">
-                    
-                        
-                    
-                    <form class="form-editProduct" action="/products/create" method="POST">
-                        <div class="div-formEdit">
-                            <div>
-                                <label for="producto" class="italics">Nombre del producto</label>
-                            </div>
-                            <input type="text" placeholder="Nombre" name="producto" id="nombre" value="<%=locals.old && old.producto? old.producto : ''%>" >
-                            <p></p>
-                            <%if (locals.errors && errors.producto){%>
-                                <p class="error"><%= errors.producto.msg %></p>
-                            <%}%>
+        <div class="form-edit">
+
+            <form class="form-editProduct" action="/products/create" method="POST" enctype="multipart/form-data">
+                <div class="div-formEdit">
+                    <div>
+                        <label for="producto" class="italics">Nombre del producto</label>
+                    </div>
+                    <input type="text" placeholder="Nombre" name="producto" id="nombre"
+                        value="<%=locals.old && old.producto? old.producto : ''%>">
+                    <p></p>
+                    <%if (locals.errors && errors.producto){%>
+                    <p class="error"><%= errors.producto.msg %></p>
+                    <%}%>
                         </div>   
 
                         <div class="div-formEdit">
                             <label for="descripcion" class="italics">Descripción</label>
                             <br>
                             <textarea name="descripcion" id="descripcion" cols="30" rows="3" value="<%=locals.old && old.descripcion? old.descripcion : ''%>"></textarea>
-                            <%if (locals.errors && errors.descripcion){%>
-                                <p class="error"><%= errors.descripcion.msg %></p>
-                            <%}%>
+                    <%if (locals.errors && errors.descripcion){%>
+                    <p class="error"><%= errors.descripcion.msg %></p>
+                    <%}%>
                         </div>
 
                         <div class="div-formEdit">
@@ -46,67 +45,72 @@
                             <br>
                             <select name="categoria" id="categoria">
                                 <option value="">Selecciona una categoría</option>
-                                <option value="1" <%= locals.old && old.categoria == 1? 'selected' : '' %>>Guitarras</option>
-                                <option value="2" <%= locals.old && old.categoria == 2? 'selected' : '' %>>Accesorios</option>
-                                <option value="3" <%= locals.old && old.categoria == 3? 'selected' : '' %>>Baterías</option>
-                                <option value="4" <%= locals.old && old.categoria == 4? 'selected' : '' %>>Partes</option>
-                                <option value="5" <%= locals.old && old.categoria == 5? 'selected' : '' %>>Pianos</option>
-                                <option value="6" <%= locals.old && old.categoria == 6? 'selected' : '' %>>Bajos</option>
-                                <option value="7" <%= locals.old && old.categoria == 7? 'selected' : '' %>>Otros instrumentos</option>
+                                <option value="1" <%= locals.old && old.categoria == 1? 'selected' : '' %>>Guitarras
+                    </option>
+                    <option value="2" <%= locals.old && old.categoria == 2? 'selected' : '' %>>Accesorios</option>
+                    <option value="3" <%= locals.old && old.categoria == 3? 'selected' : '' %>>Baterías</option>
+                    <option value="4" <%= locals.old && old.categoria == 4? 'selected' : '' %>>Partes</option>
+                    <option value="5" <%= locals.old && old.categoria == 5? 'selected' : '' %>>Pianos</option>
+                    <option value="6" <%= locals.old && old.categoria == 6? 'selected' : '' %>>Bajos</option>
+                    <option value="7" <%= locals.old && old.categoria == 7? 'selected' : '' %>>Otros instrumentos
+                    </option>
+                    </select>
+
+                </div>
+
+                <div class="div-formEdit">
+                    <label for="marca" class="italics">Marca</label>
+                    <br>
+                    <select name="marca" id="marca">
+                        <option value="">Selecciona una marca</option>
+                        <% brands.forEach((brand) => { %>
+                        <option value="<%- brand.id %>" <%= locals.old && old.marca == brand.id? 'selected' : '' %>>
+                            <%- brand.name %></option>
+                        <% }) %>
+                    </select>
+                </div>
+
+                <div class="div-formEdit">
+                    <p class="italics">Colores</p>
+                    <div class="check-colores">
+                        <select name="color" id="color">
+                            <option value="">Selecciona un color</option>
+                            <% colors.forEach((color) => { %>
+                            <option value="<%- color.id %>" <%= locals.old && old.color == color.id? 'selected' : '' %>>
+                                <%- color.name %></option>
+                            <% }) %>
                         </select>
-                        
-                        </div>
 
-                        <div class="div-formEdit">
-                            <label for="marca" class="italics">Marca</label>
-                            <br>
-                            <select name="marca" id="marca">
-                                <option value="">Selecciona una marca</option>
-                                <% brands.forEach((brand) => { %>
-                                    <option value="<%- brand.id %>" <%= locals.old && old.marca == brand.id? 'selected' : '' %> ><%- brand.name %></option>
-                                <% }) %>
-                            </select>
-                        </div>
-        
-                        <div class="div-formEdit">
-                            <p class="italics">Colores</p>
-                            <div class="check-colores">
-                                <select name="color" id="color">
-                                    <option value="">Selecciona un color</option>
-                                <% colors.forEach((color) => { %>
-                                    <option value="<%- color.id %>" <%= locals.old && old.color == color.id? 'selected' : '' %> ><%- color.name %></option>
-                                <% }) %>
-                                </select>
-        
-                            </div>
-                        </div>
-                        
+                    </div>
+                </div>
 
-                        <div class="div-formEdit">
-                            <label for="precio" class="italics">Precio</label>
-                            <br>
-                            <input type="number" placeholder="0.00" name="precio" id="precio" min="0" step="0.01" value="<%=locals.old && old.precio? old.precio: ''%>">
-                            <%if (locals.errors && errors.precio){%>
-                                <p class="error"><%= errors.precio.msg %></p>
-                            <%}%>
+
+                <div class="div-formEdit">
+                    <label for="precio" class="italics">Precio</label>
+                    <br>
+                    <input type="number" placeholder="0.00" name="precio" id="precio" min="0" step="0.01"
+                        value="<%=locals.old && old.precio? old.precio: ''%>">
+                    <%if (locals.errors && errors.precio){%>
+                    <p class="error"><%= errors.precio.msg %></p>
+                    <%}%>
                         </div>
 
                         <div class="div-formEdit">
                             <label for="descuento" class="italics">Descuento</label>
                             <br>
                             <input type="number" placeholder="0" name="descuento" id="descuento" min="0" step="1" value="<%=locals.old && old.descuento? old.descuento : ''%>">
-                            <%if (locals.errors && errors.descuento){%>
-                                <p class="error"><%= errors.descuento.msg %></p>
-                            <%}%>
+                    <%if (locals.errors && errors.descuento){%>
+                    <p class="error"><%= errors.descuento.msg %></p>
+                    <%}%>
                         </div>
 
                         <div class="div-formEdit">
                             <label for="stock" class="italics">Stock</label>
                             <br>
                             <input type="number" placeholder="0" name="stock" id="stock" min="0" step="1" value="<%=locals.old && old.stock? old.stock : ''%>">
-                            <%if (locals.errors && errors.stock){%>
-                                <p class="error"><%= errors.stock.msg %></p>
-                            <%}%>
+                    <%if (locals.errors && errors.stock){%>
+                    <p class="error"><%= errors.stock.msg %></p>
+                    <%}%>
                         </div>
 
                         <div class="botones-edit">
@@ -118,6 +122,6 @@
                 </div>
             </main>
             <%- include('./partials/footer') %>
-    </body>
+</body>
 
 </html>
