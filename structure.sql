@@ -62,7 +62,7 @@ CREATE TABLE `orders`(
    `id` int(11) NOT NULL AUTO_INCREMENT UNIQUE,
   `id_user` int(11) NOT NULL,
   `total` float(11) NOT NULL,
-  `date` datetime, 
+  `date` datetime DEFAULT NOW(), 
    PRIMARY KEY (`id`),
    KEY `orders_user_id_foreign` (`id_user`),
    CONSTRAINT `orders_user_id_foreignn` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`)

@@ -1,8 +1,8 @@
+const { body } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
 const db = require('../src/database/models');
-const { validationResult } = require("express-validator");
-//const { mapOptionFieldNames } = require('sequelize/types/lib/utils');
+//const { validationResult } = require("express-validator");
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -62,53 +62,31 @@ const controller = {
 
     /*** Acción de creación (a donde se envía el formulario) ***/
     store: (req, res) => {
-        let errores = validationResult(req);
-        if(errores.errors.length>0){
-            db.Brands.findAll()
-            .then(brands => {
-                console.log(brands)
-                db.Colors.findAll().then(colors => {
-                    res.render("createProduct", {
-                        errors: errores.mapped(),
-                        old: req.body,
-                        styles: '/static/css/editProduct.css',
-                        titulo: 'createProduct',
-                        brands: brands,
-                        colors: colors,
-                        user: req.session.login === undefined ? req.session.login : req.session.login.name
-                    });
-                })
-                
-            })
-        }
-        else{
-            //Agregamos a la base de datos
-            let productinfo=req.body;
-            console.log(req.body.marca)
-            db.Colors.findOne({
-                where: {
-                    name: req.body.color
-                }
-            }).then(color => {
-                console.log(color.id)
-                req.body.colorId = color.id
-                db.Products.create({
-                    name: req.body.producto,
-                    price: req.body.precio,
-                    discount: req.body.descuento,
-                    stock: req.body.stock,
-                    description: req.body.descripcion,
-                    image: req.body.perfil,
-                    id_color: req.body.colorId,
-                    id_categories: req.body.categoria,
-                    id_brand: req.body.marca
-                })
-
+        //const resultValidation = validationResult(req);
+        //Agregamos a la base de datos
+        console.log(req.body.marca)
+        db.Colors.findOne({
+            where: {
+                name: req.body.color
+            }
+        }).then(color => {
+            console.log(color.id)
+            req.body.colorId = color.id
+            db.Products.create({
+                name: req.body.producto,
+                price: req.body.precio,
+                discount: req.body.descuento,
+                stock: req.body.stock,
+                description: req.body.descripcion,
+                image: req.body.perfil,
+                id_color: req.body.colorId,
+                id_categories: req.body.categoria,
+                id_brand: req.body.marca
             })
 
-            res.redirect("/products");
-        }
-        
+        })
+
+        res.redirect("/products");
     },
 
     /*** Formulario de edición de productos ***/
@@ -118,12 +96,12 @@ const controller = {
                 db.Products.findByPk(req.params.id, {
                     include: [{ association: "color" }, { association: "brand" }, { association: "category" }]
                 }).then(product => {
+                    req.session.productImage = product.dataValues.image;
                     if (product) {
                         db.Colors.findAll().then(colors => {
                             console.log(colors)
-                            res.render("editProduct", { product: product, brands, colors, user: req.session.login === undefined ? req.session.login: req.session.login.name});
+                            res.render("editProduct", { product: product, brands ,colors,user: req.session.login === undefined ? req.session.login: req.session.login.name});
                         })
-
                     } else {
                         res.redirect('/products/create')
                     }
@@ -136,33 +114,37 @@ const controller = {
     /*** Acción de edición (a donde se envía el formulario) ***/
     update: (req, res) => {
         //Actualizamos en la base de datos
-
+        imagenProducto = req.session.productImage;
+        formulario = req.body;
+        try {
+            formulario.image = req.file.filename;
+            eliminarImagen(imagenProducto);
+        } catch (error) {
+            formulario.image = imagenProducto
+        }
         db.Colors.findOne({
             where: {
-                name: req.body.color
+                id: formulario.color
             }
         }).then(color => {
-            req.body.colorId = color.id
+            formulario.colorId = color.id
             db.Products.update({
-                name: req.body.producto,
-                price: req.body.precio,
-                discount: req.body.descuento,
-                stock: req.body.stock,
-                description: req.body.descripcion,
-                image: req.body.perfil,
-                id_color: req.body.colorId,
-                id_categories: req.body.categoria,
-                id_brand: req.body.marca
-
+                name: formulario.producto,
+                price: formulario.precio,
+                discount: formulario.descuento,
+                stock: formulario.stock,
+                description: formulario.descripcion,
+                image: formulario.perfil,
+                id_color: formulario.colorId,
+                id_categories: formulario.categoria,
+                id_brand: formulario.marca
             },
                 {
                     where: {
                         id: req.params.id
                     }
                 })
-
-
-            res.redirect("/products/10")
+            res.redirect("/products")
                
 
         }).catch(e => {
@@ -187,5 +169,14 @@ const controller = {
 
     
 };
+
+function eliminarImagen(imagen) {
+    fs.unlink("./public/images/users/"+imagen)
+        .then(() => {
+            console.log("imagen eliminada")
+        }).catch(err => {
+            console.error(err)
+        })
+}
 
 module.exports = controller;
