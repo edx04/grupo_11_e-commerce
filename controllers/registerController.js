@@ -12,6 +12,8 @@ const controller = {
         });
     },
     register: (req, res) => {
+        console.log("Entro en register")
+       
         const resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
             res.render("register", {
@@ -23,7 +25,6 @@ const controller = {
             });
         } else {
             //Guardamos en la base de datos
-            console.log(req)
             try {
                 req.body.image = req.file.filename;
             } catch (error) {
@@ -44,8 +45,8 @@ const controller = {
             })
             
             res.redirect("/login");
-        }
-    },
+        } 
+    }, 
 }
 
 module.exports = controller;

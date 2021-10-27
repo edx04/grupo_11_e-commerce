@@ -27,11 +27,13 @@ const controller = {
 
     update: (req, res) => {
         usuario = req.session.login;
-        try {
-            req.body.image = req.file.filename;
-            eliminarImagen(usuario.image);
-        } catch (error) {
+
+        if (req.file == undefined) {
             req.body.image = usuario.image
+            console.log("Entro en el if")
+        } else {
+            console.log("Entro en el else")
+            req.body.image = req.file.filename;
         }
         formulario = req.body;
 

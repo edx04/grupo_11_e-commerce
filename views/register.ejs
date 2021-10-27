@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('./partials/head') %>
-<script src="/static/js/validacionesRegister.js"></script>
+<script src="/static/js/validacionesRegister.js"></script>%> 
 <body>
 <%- include('./partials/header') %>
     <main class="login-register">
         <div class="full">
             <div class="izquierda">
                 <h2>Crea tu cuenta</h2>
-                <form action="/register" method="POST" enctype="multipart/form-data">
+                <form id ="formRegister" action="/register" method="POST" enctype="multipart/form-data">
                     <input type="text" name="name" placeholder="Nombre" id="nombre"
                     value= "<%= locals.oldData ? oldData.name : null %>">
                     <p class="error" id="errorNombre"></p>
@@ -36,7 +36,7 @@
 						    <input type="file" name="image" id="image"/>
                         </label><br>
                         <p class="error" id="errorImagen"></p>
-                    <button id="registrar" type="submit">Registrar</button>
+                    <button id="registrar" name="registrar" type="submit">Registrar</button>
                 </form>
                 <a href="/login">¿Ya tienes cuenta?</a>
             </div>

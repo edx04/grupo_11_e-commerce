@@ -1,6 +1,6 @@
 window.addEventListener('load', function () {
 
-    let form = document.querySelector("form");
+    let form = document.querySelector("#formRegister");
     let button = document.querySelector("#registrar");
     let buttonlogin = document.querySelector("#login");
 
