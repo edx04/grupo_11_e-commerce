@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const db = require('../src/database/models');
-//const { validationResult } = require("express-validator");
+const { validationResult } = require("express-validator");
+//const { mapOptionFieldNames } = require('sequelize/types/lib/utils');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -61,31 +62,53 @@ const controller = {
 
     /*** Acción de creación (a donde se envía el formulario) ***/
     store: (req, res) => {
-        //const resultValidation = validationResult(req);
-        //Agregamos a la base de datos
-        console.log(req.body.marca)
-        db.Colors.findOne({
-            where: {
-                name: req.body.color
-            }
-        }).then(color => {
-            console.log(color.id)
-            req.body.colorId = color.id
-            db.Products.create({
-                name: req.body.producto,
-                price: req.body.precio,
-                discount: req.body.descuento,
-                stock: req.body.stock,
-                description: req.body.descripcion,
-                image: req.body.perfil,
-                id_color: req.body.colorId,
-                id_categories: req.body.categoria,
-                id_brand: req.body.marca
+        let errores = validationResult(req);
+        if(errores.errors.length>0){
+            db.Brands.findAll()
+            .then(brands => {
+                console.log(brands)
+                db.Colors.findAll().then(colors => {
+                    res.render("createProduct", {
+                        errors: errores.mapped(),
+                        old: req.body,
+                        styles: '/static/css/editProduct.css',
+                        titulo: 'createProduct',
+                        brands: brands,
+                        colors: colors,
+                        user: req.session.login === undefined ? req.session.login : req.session.login.name
+                    });
+                })
+                
+            })
+        }
+        else{
+            //Agregamos a la base de datos
+            let productinfo=req.body;
+            console.log(req.body.marca)
+            db.Colors.findOne({
+                where: {
+                    name: req.body.color
+                }
+            }).then(color => {
+                console.log(color.id)
+                req.body.colorId = color.id
+                db.Products.create({
+                    name: req.body.producto,
+                    price: req.body.precio,
+                    discount: req.body.descuento,
+                    stock: req.body.stock,
+                    description: req.body.descripcion,
+                    image: req.body.perfil,
+                    id_color: req.body.colorId,
+                    id_categories: req.body.categoria,
+                    id_brand: req.body.marca
+                })
+
             })
 
-        })
-
-        res.redirect("/products");
+            res.redirect("/products");
+        }
+        
     },
 
     /*** Formulario de edición de productos ***/

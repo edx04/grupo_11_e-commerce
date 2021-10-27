@@ -6,7 +6,7 @@ const router = express.Router();
 const productsController = require('../controllers/productsController');
 
 // ************ Back-end validations ************
-//const validateProducts = require('../middlewares/validaciones/validacionesCreate');
+const validateProducts = require('../middlewares/validaciones/validacionesCreate');
 
 /*** Listado de productos ***/ 
 router.get('/', productsController.index); 
@@ -18,13 +18,13 @@ router.get('/create', productsController.create);
 router.get('/:id', productsController.detail); 
 
 /*** Acción de creación (a donde se envía el formulario) ***/
-router.post('/create', productsController.store); 
+router.post('/create', validateProducts, productsController.store); 
 
 /*** Formulario de edición de productos ***/ 
 router.get('/:id/edit', productsController.edit); 
 
 /*** Acción de edición (a donde se envía el formulario) ***/ 
-router.post('/:id', productsController.update); 
+router.post('/:id', validateProducts, productsController.update); 
 
 /*** Acción de borrado ***/ 
 router.delete('/:id', productsController.destroy); 
