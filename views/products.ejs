@@ -16,46 +16,10 @@
                 <section>
                     <h3>Todos los productos </h3>
                     <div class="contenedor-articulos">
-                        <% let category; %>
-                        <% let url; %>
                         
-                        <% products.forEach((product) => { %>
-                            <% switch(product.id_categories){ 
-                                   case 1: %>
-                                    <% category='guitarras' %>
-                                    <% break; 
-                                   case 2: %>
-                                    <% category='accesorios' %>
-                                    <% break; 
-                                   case 3: %>
-                                    <% category='baterias' %>
-                                    <% break; 
-                                   case 4: %>
-                                    <% category='partes' %>
-                                    <% break; 
-                                   case 5: %>
-                                    <% category='pianos' %>
-                                    <% break; 
-                                   case 6: %>
-                                    <% category='bajos' %>
-                                    <% break; 
-                                   case 7: %>
-                                    <% category='otros%20instrumentos' %>
-                                    <% break; 
-                                   default: %>
-                                    <% category='products' %>
-                                    <% break; %>
-                            <% } %>
-
-                            <% if(titulo!="Products") { %>
-                                <% url='/products/'+category+'/' + product.id;%>
-                            <% } %>
-                            <% if(titulo==="Products") { %>
-                                <% url='products/'+category+'/' + product.id;%>
-                            <% } %>
-                            
+                        <% products.forEach((product) => { %>                           
                             <article>
-                                <a href = "<%= url %>">
+                                <a href="products/<%= product.id %>">
                                     <img src="/static/images/products/<%- product.image %>" alt="<%- product.name %>" class="img-articulo">
                                     <div class="articulo">
                                         <h4 class="descripcion"><%- product.name %></h4>
