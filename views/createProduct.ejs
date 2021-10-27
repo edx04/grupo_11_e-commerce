@@ -21,7 +21,7 @@
                         value="<%=locals.old && old.producto? old.producto : ''%>">
                     <p></p>
                     <%if (locals.errors && errors.producto){%>
-                    <p class="error"><%= errors.producto.msg %></p>
+                    <p class="error" style="color:#ed9191"><%= errors.producto.msg %></p>
                     <%}%>
                         </div>   
 
@@ -30,7 +30,7 @@
                             <br>
                             <textarea name="descripcion" id="descripcion" cols="30" rows="3" value="<%=locals.old && old.descripcion? old.descripcion : ''%>"></textarea>
                     <%if (locals.errors && errors.descripcion){%>
-                    <p class="error"><%= errors.descripcion.msg %></p>
+                    <p class="error" style="color:#ed9191"><%= errors.descripcion.msg %></p>
                     <%}%>
                         </div>
 
@@ -91,7 +91,7 @@
                     <input type="number" placeholder="0.00" name="precio" id="precio" min="0" step="0.01"
                         value="<%=locals.old && old.precio? old.precio: ''%>">
                     <%if (locals.errors && errors.precio){%>
-                    <p class="error"><%= errors.precio.msg %></p>
+                    <p class="error" style="color:#ed9191"><%= errors.precio.msg %></p>
                     <%}%>
                         </div>
 
@@ -100,7 +100,7 @@
                             <br>
                             <input type="number" placeholder="0" name="descuento" id="descuento" min="0" step="1" value="<%=locals.old && old.descuento? old.descuento : ''%>">
                     <%if (locals.errors && errors.descuento){%>
-                    <p class="error"><%= errors.descuento.msg %></p>
+                    <p class="error" style="color:#ed9191"><%= errors.descuento.msg %></p>
                     <%}%>
                         </div>
 
@@ -109,7 +109,7 @@
                             <br>
                             <input type="number" placeholder="0" name="stock" id="stock" min="0" step="1" value="<%=locals.old && old.stock? old.stock : ''%>">
                     <%if (locals.errors && errors.stock){%>
-                    <p class="error"><%= errors.stock.msg %></p>
+                    <p class="error" style="color:#ed9191"><%= errors.stock.msg %></p>
                     <%}%>
                         </div>
 

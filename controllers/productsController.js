@@ -3,7 +3,7 @@ const fs = require('fs');
 const fsp = require('fs').promises
 const path = require('path');
 const db = require('../src/database/models');
-//const { validationResult } = require("express-validator");
+const { validationResult } = require("express-validator");
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -62,39 +62,60 @@ const controller = {
 
     /*** Acción de creación (a donde se envía el formulario) ***/
     store: (req, res) => {
-        //const resultValidation = validationResult(req);
-        //Agregamos a la base de datos
-        console.log("Esta es la marca")
-        console.log(req.body.marca)
-        console.log(req.file.filename)
+        let errores = validationResult(req);
+        if(errores.errors.length>0){
+            db.Brands.findAll()
+            .then(brands => {
+                console.log(brands)
+                db.Colors.findAll().then(colors => {
+                    res.render("createProduct", {
+                        errors: errores.mapped(),
+                        old: req.body,
+                        styles: '/static/css/editProduct.css',
+                        titulo: 'createProduct',
+                        brands: brands,
+                        colors: colors,
+                        user: req.session.login === undefined ? req.session.login : req.session.login.name
+                    });
+                })
 
-        if (req.file == undefined){
-            req.body.perfil = "defult.png"
-        }else{
-            req.body.perfil = req.file.filename;
+            })
         }
-        db.Colors.findOne({
-            where: {
-                id: req.body.color
+    
+        else{ 
+            //Agregamos a la base de datos
+            console.log("Esta es la marca")
+            console.log(req.body.marca)
+            console.log(req.file.filename)
+
+            if (req.file == undefined){
+                req.body.perfil = "defult.png"
+            }else{
+                req.body.perfil = req.file.filename;
             }
-        }).then(color => {
-            console.log(color.id)
-            req.body.colorId = color.id
-            db.Products.create({
-                name: req.body.producto,
-                price: req.body.precio,
-                discount: req.body.descuento,
-                stock: req.body.stock,
-                description: req.body.descripcion,
-                image: req.body.perfil,
-                id_color: req.body.colorId,
-                id_categories: req.body.categoria,
-                id_brand: req.body.marca
+            db.Colors.findOne({
+                where: {
+                    id: req.body.color
+                }
+            }).then(color => {
+                console.log(color.id)
+                req.body.colorId = color.id
+                db.Products.create({
+                    name: req.body.producto,
+                    price: req.body.precio,
+                    discount: req.body.descuento,
+                    stock: req.body.stock,
+                    description: req.body.descripcion,
+                    image: req.body.perfil,
+                    id_color: req.body.colorId,
+                    id_categories: req.body.categoria,
+                    id_brand: req.body.marca
+                })
+
             })
 
-        })
-
-        res.redirect("/products");
+            res.redirect("/products");
+        }
     },
 
     /*** Formulario de edición de productos ***/
@@ -121,7 +142,30 @@ const controller = {
 
     /*** Acción de edición (a donde se envía el formulario) ***/
     update: (req, res) => {
-        //Actualizamos en la base de datos
+        let errores = validationResult(req);
+        if(errores.errors.length>0){
+            db.Brands.findAll()
+            .then(brands => {
+                db.Products.findByPk(req.params.id, {
+                    include: [{ association: "color" }, { association: "brand" }, { association: "category" }]
+                }).then(product => {
+                    req.session.productImage = product.dataValues.image;
+                    if (product) {
+                        db.Colors.findAll().then(colors => {
+                            console.log(colors)
+                            res.render("editProduct", { product: product, brands, colors, errors: errores.mapped(),
+                                old: req.body, user: req.session.login === undefined ? req.session.login : req.session.login.name });
+                        })
+                    } else {
+                        res.redirect('/products/create')
+                    }
+                }).catch(e => {
+                    console.log(e)
+                })
+            });
+        }
+        else{
+            //Actualizamos en la base de datos
         imagenProducto = req.session.productImage;
         formulario = req.body;
         console.log("archivo mandado desde el formulario")
@@ -166,6 +210,9 @@ const controller = {
         }).catch(e => {
             console.log(e)
         })
+        }
+
+        
 
 
     },
