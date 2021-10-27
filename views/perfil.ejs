@@ -11,7 +11,12 @@
           </div>
           <div>
             <button onclick="location.href='/perfil/editar'">Editar perfil</button>
-            <button onclick="location.href='/perfil/pedidos'">Pedidos</button>
+            <% if (admin == 1) { %>
+              <button onclick="location.href='/products/create'">Crear producto</button>
+            <% } else {%>
+              <button onclick="location.href='/perfil/pedidos'">Pedidos</button>
+            <% } %> 
+           
             <form action='/perfil/cerrar' method="post">
               <button class="cerrar">Cerrar sesion</button>
             </form>

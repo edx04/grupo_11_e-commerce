@@ -10,6 +10,7 @@ const controller = {
             titulo: 'perfil',
             nombre: usuario.name,
             imagen: usuario.image,
+            admin: usuario.admin
         });
     },
 
