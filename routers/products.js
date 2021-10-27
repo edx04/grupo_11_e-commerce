@@ -45,6 +45,6 @@ router.get('/:id/edit', productsController.edit);
 router.post('/:id', upload.single("perfil"), productsController.update); 
 
 /*** Acción de borrado ***/ 
-router.delete('/:id', productsController.destroy); 
+router.post('/:id/delete', productsController.destroy); 
 
 module.exports = router;
