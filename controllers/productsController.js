@@ -6,9 +6,7 @@ const db = require('../src/database/models');
 const { validationResult } = require("express-validator");
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
 const controller = {
     /*** Listado de productos ***/
     index: (req, res) => {
@@ -22,9 +20,7 @@ const controller = {
                 user: req.session.login === undefined ? req.session.login : req.session.login.name
             });
         })
-
     },
-
     /*** Formulario de creacion de productos ***/
     create: (req, res) => {
         db.Brands.findAll()
@@ -39,10 +35,8 @@ const controller = {
                         user: req.session.login === undefined ? req.session.login : req.session.login.name
                     });
                 })
-
             })
     },
-
     /*** Detalle de un producto en particular ***/
     detail: (req, res) => {
         db.Products.findByPk(req.params.id, {
@@ -50,16 +44,14 @@ const controller = {
         }).then(product => {
             console.log(product)
             if (product) {
-                res.render("productDetail", { product, user: req.session.login === undefined ? req.session.login : req.session.login.name });
+                res.render("productDetail", { product, user: req.session.login === undefined ? req.session.login : req.session.login.name, admin: req.session.login === undefined ? req.session.login : req.session.login.admin});
             } else {
                 res.redirect("/products")
             }
-
         }).catch(e => {
             console.log(e)
         })
     },
-
     /*** Acción de creación (a donde se envía el formulario) ***/
     store: (req, res) => {
         let errores = validationResult(req);
@@ -78,16 +70,13 @@ const controller = {
                         user: req.session.login === undefined ? req.session.login : req.session.login.name
                     });
                 })
-
             })
         }
-    
-        else{ 
+        else{
             //Agregamos a la base de datos
             console.log("Esta es la marca")
             console.log(req.body.marca)
             console.log(req.file.filename)
-
             if (req.file == undefined){
                 req.body.perfil = "defult.png"
             }else{
@@ -111,13 +100,10 @@ const controller = {
                     id_categories: req.body.categoria,
                     id_brand: req.body.marca
                 })
-
             })
-
             res.redirect("/products");
         }
     },
-
     /*** Formulario de edición de productos ***/
     edit: (req, res) => {
         db.Brands.findAll()
@@ -139,7 +125,6 @@ const controller = {
                 })
             });
     },
-
     /*** Acción de edición (a donde se envía el formulario) ***/
     update: (req, res) => {
         let errores = validationResult(req);
@@ -171,7 +156,6 @@ const controller = {
         console.log("archivo mandado desde el formulario")
         console.log(imagenProducto)
         console.log(formulario.perfil)
-
         if (req.file == undefined) {
             formulario.perfil = imagenProducto;
             console.log("Entro en el if")
@@ -205,18 +189,11 @@ const controller = {
                     }
                 })
             res.redirect("/products")
-
-
         }).catch(e => {
             console.log(e)
         })
         }
-
-        
-
-
     },
-
     /*** Acción de borrado ***/
     destroy: (req, res) => {
         //Eliminamos de la base de datos
@@ -225,18 +202,15 @@ const controller = {
                 id: req.params.id
             }
         })
-
         console.log(`delete ${req.params.id} `)
         res.redirect("/products");
     },
-
     search: (req, res) => {
         const { term } = req.query;
         db.Brands.findOne({
             where: {
                 name: { [db.Sequelize.Op.like]: '%' + term + '%' }
             }
-
         }).then(brand => {
             let brandId;
             if (brand == null) {
@@ -277,13 +251,8 @@ const controller = {
                 })
             })
         })
-
-
     }
-
-
 };
-
 function eliminarImagen(imagen) {
     fsp.unlink("./public/images/products/" + imagen)
         .then(() => {
@@ -292,5 +261,4 @@ function eliminarImagen(imagen) {
             console.error(err)
         })
 }
-
 module.exports = controller;
