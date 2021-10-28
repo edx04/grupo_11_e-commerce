@@ -10,7 +10,7 @@
             <li>Producto</li>
           </ul>
         <h2><%- product.name %></h2>
-        <div class="contenedor-detalle"> 
+        <div class="contenedor-detalle">
             <div class="contenedor-img-detalle">
                 <img src="../static/images/products/<%= product.image %>" alt="<%= product.name %>" class="detail-img">
             </div>
@@ -21,12 +21,17 @@
                 </div>
                 <div class="marca-precio">
                     <h4>Marca: <%= product.brand.name %></h4>
-                    <h4>Precio: $ <%= product.price %></h4> 
+                    <h4>Precio: $ <%= product.price %></h4>
                 </div>
                 <div class="parr-descripcion">
                     <%= product.description %>
                 </div>
             </div>
+            <% if (admin == 1) { %>
+                <form action="/products/<%= product.id %>/edit " method="get">
+                    <button class="add-carrito" type="submit">Editar</button>
+                </form>
+            <% } %>
         </div>
     </main>
 <%- include('./partials/footer') %>
